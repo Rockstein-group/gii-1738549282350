@@ -1,0 +1,167 @@
+---
+import Seo from "../components/Seo.astro";
+import { Image } from "astro:assets";
+import imgimages_gii_logo_webp from "../../public/images/gii_logo.webp";
+import imgimages_menu_bar_webp from "../../public/images/menu-bar.webp";
+import imgimages_gaiact_linkedin_icon2_webp from "../../public/images/gaiact_linkedin_icon2.webp";
+import imgimages_gaiact_instagram_icon_webp from "../../public/images/gaiact_instagram_icon.webp";
+import '../styles/global.css';
+---
+
+<html lang="en">
+	<head>
+		
+        <script>
+        import { showToast } from "../components/toast";
+        (() => {
+          const els = [...document.querySelectorAll('form')];
+          if (!els?.length) return;
+          els.forEach(el => {
+            el.addEventListener('submit', async (e) => {
+              e.preventDefault();
+              const formData = new FormData(e.target);
+              const formObject = Object.fromEntries(formData);
+              formObject.emailUser = "quangnhat249@gmail.com";
+              try {
+                const response = await fetch('undefined/api/send-mail-contact', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(formObject)
+                });
+                if (!response.ok) {
+                  throw new Error('Network response was not ok');
+                }
+                const result = await response.json();
+                showToast('Form submitted successfully!');
+              } catch (error) {
+                console.error('Error submitting form:', error);
+                showToast('Error submitting form', 'error');
+              }
+            });
+          });
+        })();
+      </script>
+      <script>
+      class LazyLoad extends HTMLElement {
+        constructor() {
+          super();
+          class HeadlessDetect {
+            allTestFunctions = [
+              "testUserAgent",
+              "testChromeWindow",
+              "testPlugins",
+              "testAppVersion",
+              "testConnectionRtt",
+            ];
+
+            constructor() {}
+
+            testUserAgent() {
+              if (/Headless/.test(window.navigator.userAgent)) {
+                return 1;
+              } else {
+                return 0;
+              }
+            }
+
+            testChromeWindow() {
+              // @ts-ignore
+              if (eval.toString().length == 33 && !window.chrome) {
+                return 1;
+              } else {
+                return 0;
+              }
+            }
+
+            testNotificationPermissions(callback) {
+              navigator.permissions
+                .query({ name: "notifications" })
+                .then(function (permissionStatus) {
+                  if (
+                    Notification.permission === "denied" &&
+                    permissionStatus.state === "prompt"
+                  ) {
+                    // Headless
+                    callback(1);
+                  } else {
+                    // Not Headless
+                    callback(0);
+                  }
+                });
+            }
+
+            testPlugins() {
+              let length = navigator.plugins.length;
+
+              return length === 0 ? 1 : 0;
+            }
+
+            testAppVersion() {
+              let appVersion = navigator.appVersion;
+
+              return /headless/i.test(appVersion) ? 1 : 0;
+            }
+
+            // Connection Rtt
+            testConnectionRtt() {
+              // @ts-ignore
+              let connection = navigator.connection;
+              let connectionRtt = connection ? connection.rtt : undefined;
+
+              if (connectionRtt === undefined) {
+                return 0;
+              } else {
+                return connectionRtt === 0 ? 1 : 0;
+              }
+            }
+
+            getHeadlessScore() {
+              let score = 0;
+              let testsRun = 0;
+
+              this.testNotificationPermissions(function (v) {
+                score += v;
+                testsRun++;
+              });
+
+              for (let i = 0; i < this.allTestFunctions.length; i++) {
+                score += this[this.allTestFunctions[i]].apply();
+                testsRun++;
+              }
+
+              return score / testsRun;
+            }
+          }
+          const headlessDetector = new HeadlessDetect();
+          if (headlessDetector.getHeadlessScore() > 0.25) {
+            while (this.firstChild) {
+              this.removeChild(this.firstChild);
+            }
+          }
+        }
+      }
+
+      customElements.define("lazy-load", LazyLoad);
+    </script>
+        <Seo seo={{ title: "EcoBuilder", description: "Page description", keywords: "", canonical: "", image: '', type: "website", themeColor: "#ffffff"}} />
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/x-icon" href=/favicons/1737683475762_images.ico /> 
+		<!-- <link
+			rel="icon"
+			type="image/svg+xml"
+			href="/favicon.svg"
+		/> -->
+		<meta
+			name="viewport"
+			content="width=device-width"
+		/>
+		<meta
+			name="generator"
+			content={Astro.generator}
+		/>
+		<title>Astro</title>
+	</head>
+	<body> <header class="flex flex-col relative shrink-0 box-border h-auto empty:min-h-[30vh] before:content-[&#x27;Header&#x27;] before:absolute before:top-0 before:left-0 before:inline-block before:py-1 before:px-2 before:bg-black/20 before:text-white before:text-sm before:rounded before:!rounded-tl-none before:!rounded-bl-none mb-[1px] header-section"><section class="header-component flex flex-col overflow-hidden bg-slate-800 shadow-[0px_4px_16px_rgba(0,0,0,0.08)] text-white" role="banner" aria-label="Header section with dark background"><div class="max-md:px-5 max-md:max-w-full px-4 py-4 sm:px-6 lg:px-8"><div class="mx-auto max-w-screen-2xl"><div class="header-component flex flex-wrap justify-between gap-10 font-bold items-center"><a href="#" width="auto" height="auto" class="shrink-0" aria-label="Homepage"><Image alt="Company Logo" src={imgimages_gii_logo_webp} width="400" height="300" class="my-auto aspect-[1.01] w-[48px] lg:w-[104px] shrink-0 self-stretch object-contain" loading="lazy" aria-label="Company logo image" /></a><nav class="max-md:hidden my-auto hidden items-center gap-8 whitespace-nowrap font-normal text-base leading-none text-white lg:flex" aria-label="Main navigation menu"><a href="/concept" width="auto" height="auto" class="" aria-label="Navigate to Concept">Concept</a><a href="/solution" width="auto" height="auto" class="" aria-label="Navigate to Solution">Solution</a><a href="/responsable" width="auto" height="auto" class="" aria-label="Navigate to Numérique Responsable">Numérique Responsable</a><a href="/blog" width="auto" height="auto" class="" aria-label="Navigate to Blog">Blog</a><a href="#" width="auto" height="auto" class="uppercase" aria-label="Navigate to MADE BY GREENWEB">MADE BY GREENWEB</a></nav><div class="max-md:hidden hidden flex-wrap items-start gap-5 self-center text-xl leading-snug lg:flex "><a href="/contact" width="auto" height="auto" class="max-md:px-5 my-auto min-w-[240px] gap-2.5 self-stretch overflow-hidden rounded-md bg-lime-500 px-12 py-2.5 text-xl font-semibold leading-snug text-slate-800 hidden lg:block" aria-label="Book a demo">Réserver une démo</a></div><div class="flex items-center lg:hidden"><button width="auto" height="auto" class="flex flex-col gap-1 items-center justify-center focus:outline-none lg:hidden" aria-label="Toggle mobile menu visibility" aria-expanded="false" aria-controls="mobileNav"><Image alt="Menu icon" src={imgimages_menu_bar_webp} width="400" height="300" class="object-contain w-8 h-8" aria-label="Mobile menu icon" /></button></div></div></div></div></section></header><main class="flex flex-col relative shrink-0 box-border h-auto empty:min-h-[30vh] before:content-[&#x27;Main&#x27;] before:absolute before:top-0 before:left-0 before:inline-block before:py-1 before:px-2 before:bg-black/20 before:text-white before:text-sm before:rounded before:!rounded-tl-none before:!rounded-bl-none mb-[1px] main-section"><section class="main-component flex flex-col overflow-hidden bg-slate-800 text-white"><div class="max-md:px-5 max-md:max-w-full px-4 py-10 sm:px-6 lg:px-8"><div class="mx-auto max-w-screen-2xl"><div class="flex flex-col flex-wrap w-full justify-center gap-8 lg:gap-14"><div width="auto" height="auto" class="lg:text-[54px] leading-[2.5rem] font-semibold text-center text-white text-4xl" cssResizer="!flex-shrink ">Une info, une démo ? Contactez-nous !</div><div width="auto" height="auto" class="mt-0 text-2xl leading-5 text-center text-white max-md:max-w-full" cssResizer="!flex-shrink ">Veuillez compléter tous les champs.</div></div><form as="form" aria-labelledby="contactGiiFormTitle"><div class="max-md:mt-10 mx-auto mt-14 flex w-full max-w-full flex-col justify-center self-center lg:max-w-screen-lg" role="form" aria-label="Contact Form"><div class="max-md:max-w-full flex flex-row flex-wrap items-start w-full justify-center md:gap-4 lg:gap-6"><div class="mt-6 flex min-w-[240px] flex-1 shrink basis-0 flex-col items-start"><label width="auto" height="auto" class="text-xl font-medium leading-none text-white">Prénom</label><input name="firstName" placeholder="Entrez votre prénom" autoComplete="given-name" required="" class="mt-2 w-full flex-1 shrink gap-2 overflow-hidden rounded-md border border-solid border-zinc-300 bg-slate-700 px-4 py-3 text-base text-neutral-400"/></div><div class="mt-6 flex min-w-[240px] flex-1 shrink basis-0 flex-col items-start"><label width="auto" height="auto" class="text-xl font-medium leading-none text-white">Nom</label><input name="lastName" placeholder="Entrez votre nom" autoComplete="family-name" required="" class="mt-2 w-full flex-1 shrink gap-2 overflow-hidden rounded-md border border-solid border-zinc-300 bg-slate-700 px-4 py-3 text-base text-neutral-400"/></div></div><div class="mt-6 flex min-w-[240px] flex-1 shrink basis-0 flex-col items-start"><label width="auto" height="auto" class="text-xl font-medium leading-none text-white">Adresse e-mail</label><input name="email" placeholder="Entrez votre adresse e-mail" autoComplete="email" required="" class="mt-2 w-full flex-1 shrink gap-2 overflow-hidden rounded-md border border-solid border-zinc-300 bg-slate-700 px-4 py-3 text-base text-neutral-400"/></div><div class="mt-6 flex min-w-[240px] flex-1 shrink basis-0 flex-col items-start"><label width="auto" height="auto" class="text-xl font-medium leading-none text-white">Société</label><input name="company" placeholder="Entrez votre société" autoComplete="organization" class="mt-2 w-full flex-1 shrink gap-2 overflow-hidden rounded-md border border-solid border-zinc-300 bg-slate-700 px-4 py-3 text-base text-neutral-400"/></div><div class="max-md:max-w-full mt-6 flex w-full flex-col items-start"><label width="auto" height="auto" class="text-xl font-medium leading-none text-white">Message</label><textarea placeholder="Entrez votre message" rows="5" name="message" required="" class="mt-2 min-h-[144px] w-full flex-1 shrink gap-2 overflow-hidden rounded-md border border-solid border-zinc-300 bg-slate-700 px-4 pb-28 pt-3 text-base text-neutral-400"></textarea></div><div class="max-md:max-w-full mt-6 flex w-full flex-wrap items-center gap-1.5 text-sm leading-none text-zinc-400"><div class="my-auto flex items-center gap-2 self-stretch"><input type="checkbox" name="privacyCheckbox"/><label width="auto" height="auto" for="privacyCheckbox" class="leading-snug lg:leading-none" cssResizer="!flex-shrink">En cochant cette case, j’accepte la politique de confidentialité</label></div></div><div class="pb-16 text-center flex flex-row justify-center mt-10 lg:mt-12" cssResizer="!flex-shrink" role="presentation"><button width="auto" height="auto" type="submit" class="max-md:px-5 inline-flex min-h-[50px] w-[90%] flex-col items-center justify-center gap-2.5 overflow-hidden rounded-md bg-lime-500 px-12 py-2.5 text-[14px] font-semibold leading-snug text-gray-900 transition-all md:w-auto md:min-w-[400px] md:text-base lg:text-xl" aria-label="Submit Contact Form">Envoyer</button></div></div></form></div></div></section></main><footer class="flex flex-col relative shrink-0 box-border h-auto empty:min-h-[30vh] before:content-[&#x27;Footer&#x27;] before:absolute before:top-0 before:left-0 before:inline-block before:py-1 before:px-2 before:bg-black/20 before:text-white before:text-sm before:rounded before:!rounded-tl-none before:!rounded-bl-none mb-[1px] footer-section"><div class="footer-component w-full bg-slate-800" aria-labelledby="footerDarkSectionTitle"><div class="max-md:px-5 max-md:max-w-full min-h-[338px] px-4 sm:px-6 lg:px-8 py-6" aria-label="Footer dark container"><div class="flex w-full flex-col mx-auto max-w-screen-2xl"><div class="border border-[#AECA0E] mb-3" aria-hidden="true"></div><div class="block lg:flex flex-wrap items-start" aria-label="Footer main content"><div class="max-md:max-w-full mt-4 flex min-h-[229px] items-start gap-5 flex-col flex-shrink-0 flex-1 lg:w-[150px] sm:w-full" aria-label="Footer logo container"><a href="#" width="auto" height="auto" aria-label="Logo link"><Image alt="Gii logo" src={imgimages_gii_logo_webp} width="400" height="300" class="w-[133px]" /></a><div class="flex w-36 max-w-full items-center gap-4 z-30" role="group" aria-label="Social media links"><a href="#" target="_blank" width="auto" height="auto" class="transition hover:text-[#AECA0E] w-[32px] " rel="noreferrer" aria-label="LinkedIn"><Image alt="LinkedIn icon" src={imgimages_gaiact_linkedin_icon2_webp} width="400" height="300" class="object-contain h-[24px]" loading="lazy" isAllowResize="false" /></a><a href="#" target="_blank" width="auto" height="auto" class="text-gray-700 transition hover:text-[#AECA0E] dark:text-gray-300 w-[32px]" rel="noreferrer" aria-label="Instagram"><Image alt="Instagram icon" src={imgimages_gaiact_instagram_icon_webp} width="400" height="300" class="object-contain h-[24px]" loading="lazy" isAllowResize="false" /></a></div></div><div class="flex flex-1 z-10 gap-6 justify-center items-start self-end mt-0 min-h-[133px] flex-col lg:flex-row w-full" aria-label="Footer navigation links"><div class="flex flex-col grow shrink items-start text-sm leading-snug text-white min-w-[240px] w-[392px] max-md:max-w-full" aria-label="Footer left links"><div class="flex gap-6 items-start"><a href="#" width="auto" height="auto" class="whitespace-nowrap" aria-label="Concept link">Concept</a><a href="#" width="auto" height="auto" class="whitespace-nowrap" aria-label="Solution link">Solution</a><a href="#" width="auto" height="auto" class="whitespace-nowrap" aria-label="Numérique responsable link">Numérique responsable</a></div><div class="flex gap-6 items-start mt-6"><a href="#" width="auto" height="auto" class="whitespace-nowrap" aria-label="Blog link">Blog</a><a href="#" width="auto" height="auto" class="whitespace-nowrap" aria-label="Made by GreenWeb link">Made by GreenWeb</a><a href="#" width="auto" height="auto" class="whitespace-nowrap" aria-label="Contact link">Contact</a></div><div class="flex gap-6 items-start mt-6"><p width="auto" height="auto" class="whitespace-nowrap" aria-label="Legal mentions text">Mentions légales</p></div></div><div class="flex flex-col grow shrink text-base rounded-xl min-h-[133px] min-w-[240px] lg:w-[351px] max-md:max-w-full w-full" aria-label="Footer subscription form"><p width="auto" height="auto" class="font-medium text-white w-full" aria-label="Follow Green It Impact news">Suivez l&#x27;actualité de Green It Impact</p><div class="flex gap-3 justify-center items-center lg:items-start mt-6 w-full leading-tight max-md:max-w-full flex-col lg:flex-row" aria-label="Footer subscriber form"><input type="email" class="flex flex-1 shrink gap-2.5 items-center self-stretch px-2.5 py-3 font-light bg-gray-700 rounded-lg border border-solid basis-7 border-[color:var(--Dark-dark-300,#726E6E)] min-h-[44px] min-w-[230px] text-stone-50" placeholder="Adresse e-mail" aria-label="Email input field"/><button width="auto" height="auto" class="flex gap-2.5 justify-center items-center self-stretch px-6 py-3 font-semibold text-center whitespace-nowrap bg-lime-500 rounded-lg min-h-[44px] text-slate-800 w-full lg:w-[120px] max-md:px-5" aria-label="Send button">Envoyer</button></div></div></div></div><div class="border border-[#AECA0E] mt-8" aria-hidden="true"></div><div class="max-md:max-w-full mt-6 self-center text-xs uppercase text-white inline-flex items-center" aria-label="Footer information text"><p width="auto" height="auto" cssResizer="!flex-shrink" aria-label="Footer copyright text">© <!-- -->2025<!-- --> GREEN IT IMPACT - Site web créé par la société GreenWeb. L&#x27;ensemble des données est stocké en France par<!-- --> <!-- -->Digital Forest , hébergeur éco-responsable</p></div></div></div></div></footer> </body>
+</html>

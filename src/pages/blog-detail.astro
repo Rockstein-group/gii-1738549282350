@@ -1,0 +1,169 @@
+---
+import Seo from "../components/Seo.astro";
+import { Image } from "astro:assets";
+import imgimages_gii_logo_webp from "../../public/images/gii_logo.webp";
+import imgimages_menu_bar_webp from "../../public/images/menu-bar.webp";
+import imgimages_chevron_left_webp from "../../public/images/chevron-left.webp";
+import imgimages_gii_source_info_webp from "../../public/images/gii_source_info.webp";
+import imgimages_gaiact_linkedin_icon2_webp from "../../public/images/gaiact_linkedin_icon2.webp";
+import imgimages_gaiact_instagram_icon_webp from "../../public/images/gaiact_instagram_icon.webp";
+import '../styles/global.css';
+---
+
+<html lang="en">
+	<head>
+		
+        <script>
+        import { showToast } from "../components/toast";
+        (() => {
+          const els = [...document.querySelectorAll('form')];
+          if (!els?.length) return;
+          els.forEach(el => {
+            el.addEventListener('submit', async (e) => {
+              e.preventDefault();
+              const formData = new FormData(e.target);
+              const formObject = Object.fromEntries(formData);
+              formObject.emailUser = "quangnhat249@gmail.com";
+              try {
+                const response = await fetch('undefined/api/send-mail-contact', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(formObject)
+                });
+                if (!response.ok) {
+                  throw new Error('Network response was not ok');
+                }
+                const result = await response.json();
+                showToast('Form submitted successfully!');
+              } catch (error) {
+                console.error('Error submitting form:', error);
+                showToast('Error submitting form', 'error');
+              }
+            });
+          });
+        })();
+      </script>
+      <script>
+      class LazyLoad extends HTMLElement {
+        constructor() {
+          super();
+          class HeadlessDetect {
+            allTestFunctions = [
+              "testUserAgent",
+              "testChromeWindow",
+              "testPlugins",
+              "testAppVersion",
+              "testConnectionRtt",
+            ];
+
+            constructor() {}
+
+            testUserAgent() {
+              if (/Headless/.test(window.navigator.userAgent)) {
+                return 1;
+              } else {
+                return 0;
+              }
+            }
+
+            testChromeWindow() {
+              // @ts-ignore
+              if (eval.toString().length == 33 && !window.chrome) {
+                return 1;
+              } else {
+                return 0;
+              }
+            }
+
+            testNotificationPermissions(callback) {
+              navigator.permissions
+                .query({ name: "notifications" })
+                .then(function (permissionStatus) {
+                  if (
+                    Notification.permission === "denied" &&
+                    permissionStatus.state === "prompt"
+                  ) {
+                    // Headless
+                    callback(1);
+                  } else {
+                    // Not Headless
+                    callback(0);
+                  }
+                });
+            }
+
+            testPlugins() {
+              let length = navigator.plugins.length;
+
+              return length === 0 ? 1 : 0;
+            }
+
+            testAppVersion() {
+              let appVersion = navigator.appVersion;
+
+              return /headless/i.test(appVersion) ? 1 : 0;
+            }
+
+            // Connection Rtt
+            testConnectionRtt() {
+              // @ts-ignore
+              let connection = navigator.connection;
+              let connectionRtt = connection ? connection.rtt : undefined;
+
+              if (connectionRtt === undefined) {
+                return 0;
+              } else {
+                return connectionRtt === 0 ? 1 : 0;
+              }
+            }
+
+            getHeadlessScore() {
+              let score = 0;
+              let testsRun = 0;
+
+              this.testNotificationPermissions(function (v) {
+                score += v;
+                testsRun++;
+              });
+
+              for (let i = 0; i < this.allTestFunctions.length; i++) {
+                score += this[this.allTestFunctions[i]].apply();
+                testsRun++;
+              }
+
+              return score / testsRun;
+            }
+          }
+          const headlessDetector = new HeadlessDetect();
+          if (headlessDetector.getHeadlessScore() > 0.25) {
+            while (this.firstChild) {
+              this.removeChild(this.firstChild);
+            }
+          }
+        }
+      }
+
+      customElements.define("lazy-load", LazyLoad);
+    </script>
+        <Seo seo={{ title: "EcoBuilder", description: "Page description", keywords: "", canonical: "", image: '', type: "website", themeColor: "#ffffff"}} />
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/x-icon" href=/favicons/1737683475762_images.ico /> 
+		<!-- <link
+			rel="icon"
+			type="image/svg+xml"
+			href="/favicon.svg"
+		/> -->
+		<meta
+			name="viewport"
+			content="width=device-width"
+		/>
+		<meta
+			name="generator"
+			content={Astro.generator}
+		/>
+		<title>Astro</title>
+	</head>
+	<body> <header class="flex flex-col relative shrink-0 box-border h-auto empty:min-h-[30vh] before:content-[&#x27;Header&#x27;] before:absolute before:top-0 before:left-0 before:inline-block before:py-1 before:px-2 before:bg-black/20 before:text-white before:text-sm before:rounded before:!rounded-tl-none before:!rounded-bl-none mb-[1px] header-section"><section class="header-component flex flex-col overflow-hidden bg-slate-800 shadow-[0px_4px_16px_rgba(0,0,0,0.08)] text-white" role="banner" aria-label="Header section with dark background"><div class="max-md:px-5 max-md:max-w-full px-4 py-4 sm:px-6 lg:px-8"><div class="mx-auto max-w-screen-2xl"><div class="header-component flex flex-wrap justify-between gap-10 font-bold items-center"><a href="#" width="auto" height="auto" class="shrink-0" aria-label="Homepage"><Image alt="Company Logo" src={imgimages_gii_logo_webp} width="400" height="300" class="my-auto aspect-[1.01] w-[48px] lg:w-[104px] shrink-0 self-stretch object-contain" loading="lazy" aria-label="Company logo image" /></a><nav class="max-md:hidden my-auto hidden items-center gap-8 whitespace-nowrap font-normal text-base leading-none text-white lg:flex" aria-label="Main navigation menu"><a href="/concept" width="auto" height="auto" class="" aria-label="Navigate to Concept">Concept</a><a href="/solution" width="auto" height="auto" class="" aria-label="Navigate to Solution">Solution</a><a href="/responsable" width="auto" height="auto" class="" aria-label="Navigate to Numérique Responsable">Numérique Responsable</a><a href="/blog" width="auto" height="auto" class="" aria-label="Navigate to Blog">Blog</a><a href="#" width="auto" height="auto" class="uppercase" aria-label="Navigate to MADE BY GREENWEB">MADE BY GREENWEB</a></nav><div class="max-md:hidden hidden flex-wrap items-start gap-5 self-center text-xl leading-snug lg:flex "><a href="/contact" width="auto" height="auto" class="max-md:px-5 my-auto min-w-[240px] gap-2.5 self-stretch overflow-hidden rounded-md bg-lime-500 px-12 py-2.5 text-xl font-semibold leading-snug text-slate-800 hidden lg:block" aria-label="Book a demo">Réserver une démo</a></div><div class="flex items-center lg:hidden"><button width="auto" height="auto" class="flex flex-col gap-1 items-center justify-center focus:outline-none lg:hidden" aria-label="Toggle mobile menu visibility" aria-expanded="false" aria-controls="mobileNav"><Image alt="Menu icon" src={imgimages_menu_bar_webp} width="400" height="300" class="object-contain w-8 h-8" aria-label="Mobile menu icon" /></button></div></div></div></div></section></header><main class="flex flex-col relative shrink-0 box-border h-auto empty:min-h-[30vh] before:content-[&#x27;Main&#x27;] before:absolute before:top-0 before:left-0 before:inline-block before:py-1 before:px-2 before:bg-black/20 before:text-white before:text-sm before:rounded before:!rounded-tl-none before:!rounded-bl-none mb-[1px] main-section"><section class="main-component flex flex-col bg-slate-800" aria-labelledby="sourceInfoTitle"><section class="bg-slate-800 py-6 mx-auto w-full" aria-label="Breadcrumb Back Section"><div class="px-4 sm:px-6 lg:px-8 max-md:px-5 max-md:max-w-full" aria-label="Breadcrumb Wrapper"><div class="flex flex-wrap items-center justify-between gap-10 max-w-screen-2xl mx-auto" aria-label="Breadcrumb Container"><a href="/blog" width="auto" height="auto" class="flex flex-wrap items-start whitespace-nowrap text-xs uppercase leading-none text-white" innerClassName="flex items-center gap-2" aria-label="Source Info Navigation"><Image alt="Chevron icon pointing left" src={imgimages_chevron_left_webp} width="400" height="300" class="w-4 h-4 ml-2" loading="lazy" aria-label="Chevron Icon" isAllowResize="false" /><span width="auto" height="auto" aria-label="Back Link Text">Back</span></a></div></div></section><div class="px-4 sm:px-6 lg:px-8 max-md:px-5 max-md:max-w-full py-16"><div class="flex flex-col max-w-screen-2xl mx-auto"><div class="flex w-full flex-col self-center"><div width="auto" height="auto" cssResizer="mx-auto flex justify-center" class="max-md:px-5 w-[131px] max-w-full self-center whitespace-nowrap rounded-2xl bg-slate-700 px-12 py-1.5 text-center text-base leading-none text-lime-400 font-medium">date</div><h1 width="auto" height="auto" class="mt-0 self-center text-center text-xl lg:text-4xl font-bold text-white " cssResizer="!flex-shrink self-center mt-10">D&#x27;où vient-il?</h1><div class="mt-20 flex flex-col items-center"><Image alt="Article main image" src={imgimages_gii_source_info_webp} width="1280" height="400" class=" z-3 lg:w-[1215px] md:w-auto" cssImageWrapper="w-full " m="true" aria-label="Main image related to the article" /></div><div class="mt-12 flex flex-col items-start gap-3"><h2 width="auto" height="auto" class="max-md:mt-10 self-start text-xl lg:text-3xl leading-snug lg:leading-none text-white font-medium">D&#x27;où vient-il?</h2><p width="auto" height="auto" class="max-md:mt-0 max-md:mr-0 max-md:max-w-full mt-0 leading-10 text-white lg:text-xl text-lg" cssResizer="!flex-shrink max-md:mt-10 max-md:mr-0.5">Contrairement à une opinion répandue, le Lorem Ipsum n&#x27;est pas simplement du texte aléatoire. Il trouve ses racines dans une oeuvre de la littérature latine classique datant de 45 av. J.-C., le rendant vieux de 2000 ans. Un professeur du Hampden-Sydney College, en Virginie, s&#x27;est intéressé à un des mots latins les plus obscurs, consectetur, extrait d&#x27;un passage du Lorem Ipsum, et en étudiant tous les usages de ce mot dans la littérature classique, découvrit la source incontestable du Lorem Ipsum. Il provient en fait des sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" (Des Suprêmes Biens et des Suprêmes Maux) de Cicéron. Cet ouvrage, très populaire pendant la Renaissance, est un traité sur la théorie de l&#x27;éthique. Les premières lignes du Lorem Ipsum, "Lorem ipsum dolor sit amet...", proviennent de la section 1.10.32.</p></div><div class="mt-12 flex flex-col items-start gap-3"><h2 width="auto" height="auto" class="max-md:mt-10 self-start text-xl lg:text-3xl leading-snug lg:leading-none text-white font-medium">Pourquoi l&#x27;utiliser?</h2><p width="auto" height="auto" class="max-md:mt-0 max-md:mr-0 max-md:max-w-full mt-0 leading-10 text-white lg:text-xl text-lg" cssResizer="!flex-shrink max-md:mt-10 max-md:mr-0.5">On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même. L&#x27;avantage du Lorem Ipsum sur un texte générique comme &#x27;Du texte. Du texte. Du texte.&#x27; est qu&#x27;il possède une distribution de lettres plus ou moins normale, et en tout cas comparable avec celle du français standard. De nombreuses suites logicielles de mise en page ou éditeurs de sites Web ont fait du Lorem Ipsum leur faux texte par défaut, et une recherche pour &#x27;Lorem Ipsum&#x27; vous conduira vers de nombreux sites qui n&#x27;en sont encore qu&#x27;à leur phase de construction. Plusieurs versions sont apparues avec le temps, parfois par accident, souvent intentionnellement (histoire d&#x27;y rajouter de petits clins d&#x27;oeil, voire des phrases embarassantes).</p></div><div class="mt-12 flex flex-col items-start gap-3"><h2 width="auto" height="auto" class="max-md:mt-10 self-start text-xl lg:text-3xl leading-snug lg:leading-none text-white font-medium">Où puis-je m&#x27;en procurer?</h2><p width="auto" height="auto" class="max-md:mt-0 max-md:mr-0 max-md:max-w-full mt-0 leading-10 text-white lg:text-xl text-lg" cssResizer="!flex-shrink max-md:mt-10 max-md:mr-0.5">Plusieurs variations de Lorem Ipsum peuvent être trouvées ici ou là, mais la majeure partie d&#x27;entre elles a été altérée par l&#x27;addition d&#x27;humour ou de mots aléatoires qui ne ressemblent pas une seconde à du texte standard. Si vous voulez utiliser un passage du Lorem Ipsum, vous devez être sûr qu&#x27;il n&#x27;y a rien d&#x27;embarrassant caché dans le texte. Tous les générateurs de Lorem Ipsum sur Internet tendent à reproduire le même extrait sans fin, ce qui fait de lipsum.com le seul vrai générateur de Lorem Ipsum. Iil utilise un dictionnaire de plus de 200 mots latins, en combinaison de plusieurs structures de phrases, pour générer un Lorem Ipsum irréprochable. Le Lorem Ipsum ainsi obtenu ne contient aucune répétition, ni ne contient des mots farfelus, ou des touches d&#x27;humour.</p></div></div><div class="text-center pb-16 flex justify-center"><button width="auto" height="auto" class="max-md:mt-0 mt-0 min-h-[50px] flex-col items-center justify-center text-[14px] md:text-base lg:text-xl font-semibold leading-snug text-gray-900 max-md:px-5 inline-flex max-w-full gap-2.5 overflow-hidden rounded-md bg-lime-500 transition-all px-12 py-2.5" aria-label="Contact us for more information" cssResizer="!flex-shrink max-md:mt-10 mt-12">Contactez-nous pour en savoir plus</button></div></div></div></section></main><footer class="flex flex-col relative shrink-0 box-border h-auto empty:min-h-[30vh] before:content-[&#x27;Footer&#x27;] before:absolute before:top-0 before:left-0 before:inline-block before:py-1 before:px-2 before:bg-black/20 before:text-white before:text-sm before:rounded before:!rounded-tl-none before:!rounded-bl-none mb-[1px] footer-section"><div class="footer-component w-full bg-slate-800" aria-labelledby="footerDarkSectionTitle"><div class="max-md:px-5 max-md:max-w-full min-h-[338px] px-4 sm:px-6 lg:px-8 py-6" aria-label="Footer dark container"><div class="flex w-full flex-col mx-auto max-w-screen-2xl"><div class="border border-[#AECA0E] mb-3" aria-hidden="true"></div><div class="block lg:flex flex-wrap items-start" aria-label="Footer main content"><div class="max-md:max-w-full mt-4 flex min-h-[229px] items-start gap-5 flex-col flex-shrink-0 flex-1 lg:w-[150px] sm:w-full" aria-label="Footer logo container"><a href="#" width="auto" height="auto" aria-label="Logo link"><Image alt="Gii logo" src={imgimages_gii_logo_webp} width="400" height="300" class="w-[133px]" /></a><div class="flex w-36 max-w-full items-center gap-4 z-30" role="group" aria-label="Social media links"><a href="#" target="_blank" width="auto" height="auto" class="transition hover:text-[#AECA0E] w-[32px] " rel="noreferrer" aria-label="LinkedIn"><Image alt="LinkedIn icon" src={imgimages_gaiact_linkedin_icon2_webp} width="400" height="300" class="object-contain h-[24px]" loading="lazy" isAllowResize="false" /></a><a href="#" target="_blank" width="auto" height="auto" class="text-gray-700 transition hover:text-[#AECA0E] dark:text-gray-300 w-[32px]" rel="noreferrer" aria-label="Instagram"><Image alt="Instagram icon" src={imgimages_gaiact_instagram_icon_webp} width="400" height="300" class="object-contain h-[24px]" loading="lazy" isAllowResize="false" /></a></div></div><div class="flex flex-1 z-10 gap-6 justify-center items-start self-end mt-0 min-h-[133px] flex-col lg:flex-row w-full" aria-label="Footer navigation links"><div class="flex flex-col grow shrink items-start text-sm leading-snug text-white min-w-[240px] w-[392px] max-md:max-w-full" aria-label="Footer left links"><div class="flex gap-6 items-start"><a href="#" width="auto" height="auto" class="whitespace-nowrap" aria-label="Concept link">Concept</a><a href="#" width="auto" height="auto" class="whitespace-nowrap" aria-label="Solution link">Solution</a><a href="#" width="auto" height="auto" class="whitespace-nowrap" aria-label="Numérique responsable link">Numérique responsable</a></div><div class="flex gap-6 items-start mt-6"><a href="#" width="auto" height="auto" class="whitespace-nowrap" aria-label="Blog link">Blog</a><a href="#" width="auto" height="auto" class="whitespace-nowrap" aria-label="Made by GreenWeb link">Made by GreenWeb</a><a href="#" width="auto" height="auto" class="whitespace-nowrap" aria-label="Contact link">Contact</a></div><div class="flex gap-6 items-start mt-6"><p width="auto" height="auto" class="whitespace-nowrap" aria-label="Legal mentions text">Mentions légales</p></div></div><div class="flex flex-col grow shrink text-base rounded-xl min-h-[133px] min-w-[240px] lg:w-[351px] max-md:max-w-full w-full" aria-label="Footer subscription form"><p width="auto" height="auto" class="font-medium text-white w-full" aria-label="Follow Green It Impact news">Suivez l&#x27;actualité de Green It Impact</p><div class="flex gap-3 justify-center items-center lg:items-start mt-6 w-full leading-tight max-md:max-w-full flex-col lg:flex-row" aria-label="Footer subscriber form"><input type="email" class="flex flex-1 shrink gap-2.5 items-center self-stretch px-2.5 py-3 font-light bg-gray-700 rounded-lg border border-solid basis-7 border-[color:var(--Dark-dark-300,#726E6E)] min-h-[44px] min-w-[230px] text-stone-50" placeholder="Adresse e-mail" aria-label="Email input field"/><button width="auto" height="auto" class="flex gap-2.5 justify-center items-center self-stretch px-6 py-3 font-semibold text-center whitespace-nowrap bg-lime-500 rounded-lg min-h-[44px] text-slate-800 w-full lg:w-[120px] max-md:px-5" aria-label="Send button">Envoyer</button></div></div></div></div><div class="border border-[#AECA0E] mt-8" aria-hidden="true"></div><div class="max-md:max-w-full mt-6 self-center text-xs uppercase text-white inline-flex items-center" aria-label="Footer information text"><p width="auto" height="auto" cssResizer="!flex-shrink" aria-label="Footer copyright text">© <!-- -->2025<!-- --> GREEN IT IMPACT - Site web créé par la société GreenWeb. L&#x27;ensemble des données est stocké en France par<!-- --> <!-- -->Digital Forest , hébergeur éco-responsable</p></div></div></div></div></footer> </body>
+</html>

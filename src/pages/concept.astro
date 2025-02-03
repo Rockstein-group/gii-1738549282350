@@ -1,0 +1,170 @@
+---
+import Seo from "../components/Seo.astro";
+import { Image } from "astro:assets";
+import imgimages_gii_logo_webp from "../../public/images/gii_logo.webp";
+import imgimages_menu_bar_webp from "../../public/images/menu-bar.webp";
+import imgimages_gii_concept_img_2_webp from "../../public/images/gii_concept_img_2.webp";
+import imgimages_gii_clr_img_1_webp from "../../public/images/gii_clr_img_1.webp";
+import imgimages_gii_clr_img_2_webp from "../../public/images/gii_clr_img_2.webp";
+import imgimages_gaiact_linkedin_icon2_webp from "../../public/images/gaiact_linkedin_icon2.webp";
+import imgimages_gaiact_instagram_icon_webp from "../../public/images/gaiact_instagram_icon.webp";
+import '../styles/global.css';
+---
+
+<html lang="en">
+	<head>
+		
+        <script>
+        import { showToast } from "../components/toast";
+        (() => {
+          const els = [...document.querySelectorAll('form')];
+          if (!els?.length) return;
+          els.forEach(el => {
+            el.addEventListener('submit', async (e) => {
+              e.preventDefault();
+              const formData = new FormData(e.target);
+              const formObject = Object.fromEntries(formData);
+              formObject.emailUser = "quangnhat249@gmail.com";
+              try {
+                const response = await fetch('undefined/api/send-mail-contact', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(formObject)
+                });
+                if (!response.ok) {
+                  throw new Error('Network response was not ok');
+                }
+                const result = await response.json();
+                showToast('Form submitted successfully!');
+              } catch (error) {
+                console.error('Error submitting form:', error);
+                showToast('Error submitting form', 'error');
+              }
+            });
+          });
+        })();
+      </script>
+      <script>
+      class LazyLoad extends HTMLElement {
+        constructor() {
+          super();
+          class HeadlessDetect {
+            allTestFunctions = [
+              "testUserAgent",
+              "testChromeWindow",
+              "testPlugins",
+              "testAppVersion",
+              "testConnectionRtt",
+            ];
+
+            constructor() {}
+
+            testUserAgent() {
+              if (/Headless/.test(window.navigator.userAgent)) {
+                return 1;
+              } else {
+                return 0;
+              }
+            }
+
+            testChromeWindow() {
+              // @ts-ignore
+              if (eval.toString().length == 33 && !window.chrome) {
+                return 1;
+              } else {
+                return 0;
+              }
+            }
+
+            testNotificationPermissions(callback) {
+              navigator.permissions
+                .query({ name: "notifications" })
+                .then(function (permissionStatus) {
+                  if (
+                    Notification.permission === "denied" &&
+                    permissionStatus.state === "prompt"
+                  ) {
+                    // Headless
+                    callback(1);
+                  } else {
+                    // Not Headless
+                    callback(0);
+                  }
+                });
+            }
+
+            testPlugins() {
+              let length = navigator.plugins.length;
+
+              return length === 0 ? 1 : 0;
+            }
+
+            testAppVersion() {
+              let appVersion = navigator.appVersion;
+
+              return /headless/i.test(appVersion) ? 1 : 0;
+            }
+
+            // Connection Rtt
+            testConnectionRtt() {
+              // @ts-ignore
+              let connection = navigator.connection;
+              let connectionRtt = connection ? connection.rtt : undefined;
+
+              if (connectionRtt === undefined) {
+                return 0;
+              } else {
+                return connectionRtt === 0 ? 1 : 0;
+              }
+            }
+
+            getHeadlessScore() {
+              let score = 0;
+              let testsRun = 0;
+
+              this.testNotificationPermissions(function (v) {
+                score += v;
+                testsRun++;
+              });
+
+              for (let i = 0; i < this.allTestFunctions.length; i++) {
+                score += this[this.allTestFunctions[i]].apply();
+                testsRun++;
+              }
+
+              return score / testsRun;
+            }
+          }
+          const headlessDetector = new HeadlessDetect();
+          if (headlessDetector.getHeadlessScore() > 0.25) {
+            while (this.firstChild) {
+              this.removeChild(this.firstChild);
+            }
+          }
+        }
+      }
+
+      customElements.define("lazy-load", LazyLoad);
+    </script>
+        <Seo seo={{ title: "EcoBuilder", description: "Page description", keywords: "", canonical: "", image: '', type: "website", themeColor: "#ffffff"}} />
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/x-icon" href=/favicons/1737683475762_images.ico /> 
+		<!-- <link
+			rel="icon"
+			type="image/svg+xml"
+			href="/favicon.svg"
+		/> -->
+		<meta
+			name="viewport"
+			content="width=device-width"
+		/>
+		<meta
+			name="generator"
+			content={Astro.generator}
+		/>
+		<title>Astro</title>
+	</head>
+	<body> <header class="flex flex-col relative shrink-0 box-border h-auto empty:min-h-[30vh] before:content-[&#x27;Header&#x27;] before:absolute before:top-0 before:left-0 before:inline-block before:py-1 before:px-2 before:bg-black/20 before:text-white before:text-sm before:rounded before:!rounded-tl-none before:!rounded-bl-none mb-[1px] header-section"><section class="header-component flex flex-col overflow-hidden bg-slate-800 shadow-[0px_4px_16px_rgba(0,0,0,0.08)] text-white" role="banner" aria-label="Header section with dark background"><div class="max-md:px-5 max-md:max-w-full px-4 py-4 sm:px-6 lg:px-8"><div class="mx-auto max-w-screen-2xl"><div class="header-component flex flex-wrap justify-between gap-10 font-bold items-center"><a href="#" width="auto" height="auto" class="shrink-0" aria-label="Homepage"><Image alt="Company Logo" src={imgimages_gii_logo_webp} width="400" height="300" class="my-auto aspect-[1.01] w-[48px] lg:w-[104px] shrink-0 self-stretch object-contain" loading="lazy" aria-label="Company logo image" /></a><nav class="max-md:hidden my-auto hidden items-center gap-8 whitespace-nowrap font-normal text-base leading-none text-white lg:flex" aria-label="Main navigation menu"><a href="/concept" width="auto" height="auto" class="" aria-label="Navigate to Concept">Concept</a><a href="/solution" width="auto" height="auto" class="" aria-label="Navigate to Solution">Solution</a><a href="/responsable" width="auto" height="auto" class="" aria-label="Navigate to Numérique Responsable">Numérique Responsable</a><a href="/blog" width="auto" height="auto" class="" aria-label="Navigate to Blog">Blog</a><a href="#" width="auto" height="auto" class="uppercase" aria-label="Navigate to MADE BY GREENWEB">MADE BY GREENWEB</a></nav><div class="max-md:hidden hidden flex-wrap items-start gap-5 self-center text-xl leading-snug lg:flex "><a href="/contact" width="auto" height="auto" class="max-md:px-5 my-auto min-w-[240px] gap-2.5 self-stretch overflow-hidden rounded-md bg-lime-500 px-12 py-2.5 text-xl font-semibold leading-snug text-slate-800 hidden lg:block" aria-label="Book a demo">Réserver une démo</a></div><div class="flex items-center lg:hidden"><button width="auto" height="auto" class="flex flex-col gap-1 items-center justify-center focus:outline-none lg:hidden" aria-label="Toggle mobile menu visibility" aria-expanded="false" aria-controls="mobileNav"><Image alt="Menu icon" src={imgimages_menu_bar_webp} width="400" height="300" class="object-contain w-8 h-8" aria-label="Mobile menu icon" /></button></div></div></div></div></section></header><main class="flex flex-col relative shrink-0 box-border h-auto empty:min-h-[30vh] before:content-[&#x27;Main&#x27;] before:absolute before:top-0 before:left-0 before:inline-block before:py-1 before:px-2 before:bg-black/20 before:text-white before:text-sm before:rounded before:!rounded-tl-none before:!rounded-bl-none mb-[1px] main-section"><section class="main-component flex flex-col bg-slate-800 gap-8" aria-label="Green IT Impact Section"><div class="flex flex-col gap-8 px-4 sm:px-6 lg:px-8 max-md:px-5 max-md:max-w-full pt-12" aria-label="Header Wrapper"><div class="max-w-screen-2xl mx-auto" aria-label="Header Container"><div class="flex flex-col lg:flex-row items-center flex-wrap lg:flex-nowrap gap-2.5 w-full text-[26px] leading-snug text-4xl font-semibold lg:leading-none text-white max-md:max-w-full lg:max-w-[90%]" aria-label="Header Content"><h4 width="auto" height="auto" class="text-[26px] lg:leading-none text-center lg:text-[2.25rem] lg:text-left self-stretch mb-0 lg:!my-auto max-md:max-w-full" aria-label="Green IT Impact Title" cssResizer="!flex-shrink">Green IT Impact est avant tout une approche axée sur la performance pour les entreprises et les collectivités :</h4><Image alt="Green IT concept illustration" src={imgimages_gii_concept_img_2_webp} width="400" height="300" class="self-stretch w-[100%] lg:min-w-[420px] lg:max-w-[420px] flex justify-center items-center" aria-label="Concept Image" cssResizer="flex justify-center" cssImageWrapper="flex justify-center " /></div></div></div><div class="px-4 sm:px-6 lg:px-8 max-md:px-5 max-md:max-w-full bg-slate-700 py-12 mx-4 sm:mx-6 max-md:mx-5 lg:mx-0 rounded-xl lg:rounded-none" aria-label="Green IT Impact Body"><div class="flex flex-col gap-8 max-w-screen-2xl mx-auto items-start" aria-label="Body Container"><div class="flex flex-col gap-6 items-start" aria-label="Performance Text 1"><h4 width="auto" height="auto" class="text-xl lg:text-2xl font-semibold leading-8 text-lime-500" aria-label="La performance environnementale" cssResizer="!flex-shrink">La performance environnementale</h4><div class="leading-7 text-white ml-3" aria-label="Description for La performance environnementale"><div class="flex items-start lg:items-center" aria-label="Performance Description"><div class="relative w-2 h-2 rounded-full bg-white flex-shrink-0 mr-2 top-1.5 lg:top-0" aria-hidden="true"></div><p width="auto" height="auto" cssResizer="!flex-shrink" class="leading-7 text-white text-lg lg:text-xl" aria-label="Améliorez votre performance environnementale en réduisant concrètement votre empreinte.">Améliorez votre performance environnementale en réduisant concrètement votre empreinte.</p></div></div></div><div class="flex flex-col gap-6 items-start" aria-label="Performance Text 2"><h4 width="auto" height="auto" class="text-xl lg:text-2xl font-semibold leading-8 text-lime-500" aria-label="La performance économique" cssResizer="!flex-shrink">La performance économique</h4><div class="leading-7 text-white ml-3" aria-label="Description for La performance économique"><div class="flex items-start lg:items-center" aria-label="Performance Description"><div class="relative w-2 h-2 rounded-full bg-white flex-shrink-0 mr-2 top-1.5 lg:top-0" aria-hidden="true"></div><p width="auto" height="auto" cssResizer="!flex-shrink" class="leading-7 text-white text-lg lg:text-xl" aria-label="Réalisez des économies sur le budget des systèmes d&#x27;information en adoptant des pratiques engageantes qui génèrent de la durabilité.">Réalisez des économies sur le budget des systèmes d&#x27;information en adoptant des pratiques engageantes qui génèrent de la durabilité.</p></div></div></div><div class="flex flex-col gap-6 items-start" aria-label="Performance Text 3"><h4 width="auto" height="auto" class="text-xl lg:text-2xl font-semibold leading-8 text-lime-500" aria-label="La performance technique" cssResizer="!flex-shrink">La performance technique</h4><div class="leading-7 text-white ml-3" aria-label="Description for La performance technique"><div class="flex items-start lg:items-center" aria-label="Performance Description"><div class="relative w-2 h-2 rounded-full bg-white flex-shrink-0 mr-2 top-1.5 lg:top-0" aria-hidden="true"></div><p width="auto" height="auto" cssResizer="!flex-shrink" class="leading-7 text-white text-lg lg:text-xl" aria-label="Augmentez la performance technique de votre SI et de vos services numériques par une approche de « faire mieux avec moins ».">Augmentez la performance technique de votre SI et de vos services numériques par une approche de « faire mieux avec moins ».</p></div></div></div><div class="flex flex-col gap-6 items-start" aria-label="Performance Text 4"><h4 width="auto" height="auto" class="text-xl lg:text-2xl font-semibold leading-8 text-lime-500" aria-label="La performance sociétale" cssResizer="!flex-shrink">La performance sociétale</h4><div class="leading-7 text-white ml-3" aria-label="Description for La performance sociétale"><div class="flex items-start lg:items-center" aria-label="Performance Description"><div class="relative w-2 h-2 rounded-full bg-white flex-shrink-0 mr-2 top-1.5 lg:top-0" aria-hidden="true"></div><p width="auto" height="auto" cssResizer="!flex-shrink" class="leading-7 text-white text-lg lg:text-xl" aria-label="Impliquez, éduquez et mettez au défi l’ensemble de l’écosystème interne et externe de votre entreprise ou collectivité.">Impliquez, éduquez et mettez au défi l’ensemble de l’écosystème interne et externe de votre entreprise ou collectivité.</p></div></div></div></div></div><div class="text-center pb-12 flex justify-center" aria-label="Button Container"><button width="auto" height="auto" class="max-md:mt-0 mt-0 min-h-[50px] flex-col items-center justify-center text-[14px] md:text-base lg:text-xl font-semibold leading-snug text-gray-900 max-md:px-5 inline-flex max-w-full gap-2.5 overflow-hidden rounded-md bg-lime-500 transition-all px-12 py-2.5" aria-label="Learn More About Green IT Impact Button" cssResizer="!flex-shrink flex justify-center">En savoir plus sur Green It Impact</button></div><section class="main-component flex flex-col bg-slate-800" aria-labelledby="conformiteLoiReenTitle"><div class="px-4 sm:px-6 lg:px-8 max-md:px-5 max-md:max-w-full pt-16" aria-label="Conformité Loi REEN header wrapper"><div class="max-w-screen-2xl mx-auto"><h4 width="auto" height="auto" class="gap-2.5 self-stretch w-full text-[26px] lg:leading-[2.5rem] lg:text-4xl font-semibold text-white text-center ">Conformité Loi REEN</h4></div></div><div class="flex flex-col justify-center py-10 mt-10 w-full font-semibold leading-none text-center max-md:max-w-full"><div class="flex flex-col justify-center py-4 w-full border-t border-b border-white px-4 sm:px-6 lg:px-8 max-md:px-5 max-md:max-w-full bg-slate-700 text-white"><div class="w-full max-w-screen-2xl mx-auto"><p width="auto" height="auto" class="w-full leading-snug">La solution Green IT Impact vous permet d’être en conformité avec la loi REEN, prolongement de la loi AGEC.</p></div></div></div><div class="px-4 sm:px-6 lg:px-8 max-md:px-5 max-md:max-w-full" aria-label="Conformité Loi REEN body wrapper"><div class="max-w-screen-2xl mx-auto"><div class="flex flex-col items-center text-xl text-white gap-8"><p width="auto" height="auto" class="w-full mt-0 text-lg lg:text-xl leading-snug lg:leading-10 text-left lg:text-center">La loi REEN (Réduction de l’empreinte environnementale du numérique) s’adresse à tous les acteurs de la chaîne de valeur du numérique :</p><div class="flex flex-wrap gap-0 md:gap-6 justify-between md:justify-start items-start mt-10 font-semibold text-center text-lime-400 min-h-[340px]"><div class="flex flex-col items-center p-4 leading-snug rounded-2xl bg-slate-700 min-h-[295px] lg:min-h-[310px] w-[calc(50%_-_9px)] md:w-[302px]" aria-labelledby="conformiteLoiReenProfessionalLabel"><Image alt="Professionnels du secteur" src={imgimages_gii_clr_img_1_webp} width="400" height="300" class="max-w-full aspect-square w-[200px] mx-auto" cssResizer="mx-auto" loading="lazy" /><p width="auto" height="auto" class="mt-0">Professionnels du secteur</p></div><div class="flex flex-col items-center p-4 leading-snug rounded-2xl bg-slate-700 min-h-[295px] lg:min-h-[310px] w-[calc(50%_-_9px)] md:w-[302px]" aria-labelledby="conformiteLoiReenPublicLabel"><Image alt="Acteurs publics et consommateurs" src={imgimages_gii_clr_img_2_webp} width="400" height="300" class="max-w-full aspect-square w-[200px] mx-auto" cssResizer="mx-auto" loading="lazy" /><p width="auto" height="auto" class="mt-0">Acteurs publics et consommateurs</p></div></div><p width="auto" height="auto" class="flex-1 shrink gap-2.5 mt-0 self-stretch w-full max-md:px-5 max-md:max-w-full">Elle s’articule autour de 5 objectifs clés :</p><div class="flex flex-wrap mt-10 leading-8 text-center min-h-[131px] -mx-3 "><div class="bg-slate-800 w-full lg:w-[25%] px-3 mx-auto mt-10 lg:last:mt-10 h-full" aria-labelledby="conformiteLoiReenText1"><div class="p-4 rounded-2xl border border-white border-solid flex flex-col items-start"><p width="auto" height="auto" class="leading-7 text-lg lg:text-xl">La prise de conscience de l’impact environnemental du numérique.</p></div></div><div class="bg-slate-800 w-full lg:w-[25%] px-3 mx-auto mt-10 lg:last:mt-10 h-full" aria-labelledby="conformiteLoiReenText2"><div class="p-4 rounded-2xl border border-white border-solid flex flex-col items-start"><p width="auto" height="auto" class="leading-7 text-lg lg:text-xl">La réduction du renouvellement des appareils numériques.</p></div></div><div class="bg-slate-800 w-full lg:w-[25%] px-3 mx-auto mt-10 lg:last:mt-10 h-full" aria-labelledby="conformiteLoiReenText3"><div class="p-4 rounded-2xl border border-white border-solid flex flex-col items-start"><p width="auto" height="auto" class="leading-7 text-lg lg:text-xl">L’adoption d’usages numériques écoresponsables.</p></div></div><div class="bg-slate-800 w-full lg:w-[25%] px-3 mx-auto mt-10 lg:last:mt-10 h-full" aria-labelledby="conformiteLoiReenText4"><div class="p-4 rounded-2xl border border-white border-solid flex flex-col items-start"><p width="auto" height="auto" class="leading-7 text-lg lg:text-xl">La promotion des centres de données et des réseaux moins énergivores.</p></div></div><div class="bg-slate-800 w-full lg:w-[25%] px-3 mx-auto mt-10 lg:last:mt-10 h-full" aria-labelledby="conformiteLoiReenText5"><div class="p-4 rounded-2xl border border-white border-solid flex flex-col items-start"><p width="auto" height="auto" class="leading-7 text-lg lg:text-xl">La promotion du déploiement d’une stratégie numérique responsable dans les territoires.</p></div></div></div><div width="auto" height="auto" class="text-lg lg:text-xl mt-0 flex-1 shrink gap-2.5 self-stretch w-full text-center" cssResizer="mt-[2.5rem]">Notre équipe vous accompagne vers l’obtention du label officiel Numérique Responsable.</div><div class="text-center pb-16 max-md:mt-6 mt-8" aria-label="Button container"><button width="auto" height="auto" class=" min-h-[50px] flex-col items-center justify-center text-[14px] md:text-base lg:text-xl font-semibold leading-snug text-gray-900 max-md:px-5 inline-flex max-w-full gap-2.5 overflow-hidden rounded-md bg-lime-500 transition-all px-12 py-2.5" aria-label="Contact us button">Contactez-nous pour en savoir plus</button></div></div></div></div></section></section></main><footer class="flex flex-col relative shrink-0 box-border h-auto empty:min-h-[30vh] before:content-[&#x27;Footer&#x27;] before:absolute before:top-0 before:left-0 before:inline-block before:py-1 before:px-2 before:bg-black/20 before:text-white before:text-sm before:rounded before:!rounded-tl-none before:!rounded-bl-none mb-[1px] footer-section"><div class="footer-component w-full bg-slate-800" aria-labelledby="footerDarkSectionTitle"><div class="max-md:px-5 max-md:max-w-full min-h-[338px] px-4 sm:px-6 lg:px-8 py-6" aria-label="Footer dark container"><div class="flex w-full flex-col mx-auto max-w-screen-2xl"><div class="border border-[#AECA0E] mb-3" aria-hidden="true"></div><div class="block lg:flex flex-wrap items-start" aria-label="Footer main content"><div class="max-md:max-w-full mt-4 flex min-h-[229px] items-start gap-5 flex-col flex-shrink-0 flex-1 lg:w-[150px] sm:w-full" aria-label="Footer logo container"><a href="#" width="auto" height="auto" aria-label="Logo link"><Image alt="Gii logo" src={imgimages_gii_logo_webp} width="400" height="300" class="w-[133px]" /></a><div class="flex w-36 max-w-full items-center gap-4 z-30" role="group" aria-label="Social media links"><a href="#" target="_blank" width="auto" height="auto" class="transition hover:text-[#AECA0E] w-[32px] " rel="noreferrer" aria-label="LinkedIn"><Image alt="LinkedIn icon" src={imgimages_gaiact_linkedin_icon2_webp} width="400" height="300" class="object-contain h-[24px]" loading="lazy" isAllowResize="false" /></a><a href="#" target="_blank" width="auto" height="auto" class="text-gray-700 transition hover:text-[#AECA0E] dark:text-gray-300 w-[32px]" rel="noreferrer" aria-label="Instagram"><Image alt="Instagram icon" src={imgimages_gaiact_instagram_icon_webp} width="400" height="300" class="object-contain h-[24px]" loading="lazy" isAllowResize="false" /></a></div></div><div class="flex flex-1 z-10 gap-6 justify-center items-start self-end mt-0 min-h-[133px] flex-col lg:flex-row w-full" aria-label="Footer navigation links"><div class="flex flex-col grow shrink items-start text-sm leading-snug text-white min-w-[240px] w-[392px] max-md:max-w-full" aria-label="Footer left links"><div class="flex gap-6 items-start"><a href="#" width="auto" height="auto" class="whitespace-nowrap" aria-label="Concept link">Concept</a><a href="#" width="auto" height="auto" class="whitespace-nowrap" aria-label="Solution link">Solution</a><a href="#" width="auto" height="auto" class="whitespace-nowrap" aria-label="Numérique responsable link">Numérique responsable</a></div><div class="flex gap-6 items-start mt-6"><a href="#" width="auto" height="auto" class="whitespace-nowrap" aria-label="Blog link">Blog</a><a href="#" width="auto" height="auto" class="whitespace-nowrap" aria-label="Made by GreenWeb link">Made by GreenWeb</a><a href="#" width="auto" height="auto" class="whitespace-nowrap" aria-label="Contact link">Contact</a></div><div class="flex gap-6 items-start mt-6"><p width="auto" height="auto" class="whitespace-nowrap" aria-label="Legal mentions text">Mentions légales</p></div></div><div class="flex flex-col grow shrink text-base rounded-xl min-h-[133px] min-w-[240px] lg:w-[351px] max-md:max-w-full w-full" aria-label="Footer subscription form"><p width="auto" height="auto" class="font-medium text-white w-full" aria-label="Follow Green It Impact news">Suivez l&#x27;actualité de Green It Impact</p><div class="flex gap-3 justify-center items-center lg:items-start mt-6 w-full leading-tight max-md:max-w-full flex-col lg:flex-row" aria-label="Footer subscriber form"><input type="email" class="flex flex-1 shrink gap-2.5 items-center self-stretch px-2.5 py-3 font-light bg-gray-700 rounded-lg border border-solid basis-7 border-[color:var(--Dark-dark-300,#726E6E)] min-h-[44px] min-w-[230px] text-stone-50" placeholder="Adresse e-mail" aria-label="Email input field"/><button width="auto" height="auto" class="flex gap-2.5 justify-center items-center self-stretch px-6 py-3 font-semibold text-center whitespace-nowrap bg-lime-500 rounded-lg min-h-[44px] text-slate-800 w-full lg:w-[120px] max-md:px-5" aria-label="Send button">Envoyer</button></div></div></div></div><div class="border border-[#AECA0E] mt-8" aria-hidden="true"></div><div class="max-md:max-w-full mt-6 self-center text-xs uppercase text-white inline-flex items-center" aria-label="Footer information text"><p width="auto" height="auto" cssResizer="!flex-shrink" aria-label="Footer copyright text">© <!-- -->2025<!-- --> GREEN IT IMPACT - Site web créé par la société GreenWeb. L&#x27;ensemble des données est stocké en France par<!-- --> <!-- -->Digital Forest , hébergeur éco-responsable</p></div></div></div></div></footer> </body>
+</html>

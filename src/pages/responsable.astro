@@ -1,0 +1,174 @@
+---
+import Seo from "../components/Seo.astro";
+import { Image } from "astro:assets";
+import imgimages_gii_logo_webp from "../../public/images/gii_logo.webp";
+import imgimages_menu_bar_webp from "../../public/images/menu-bar.webp";
+import imgimages_chevron_right_webp from "../../public/images/chevron-right.webp";
+import imgimages_gii_digital_technology_img_2_webp from "../../public/images/gii_digital_technology_img_2.webp";
+import imgimages_gii_digital_technology_img_3_webp from "../../public/images/gii_digital_technology_img_3.webp";
+import imgimages_gii_digital_technology_img_4_webp from "../../public/images/gii_digital_technology_img_4.webp";
+import imgimages_gii_digital_technology_img_5_webp from "../../public/images/gii_digital_technology_img_5.webp";
+import imgimages_gii_digital_technology_img_6_webp from "../../public/images/gii_digital_technology_img_6.webp";
+import imgimages_gii_digital_technology_img_7_webp from "../../public/images/gii_digital_technology_img_7.webp";
+import imgimages_gaiact_linkedin_icon2_webp from "../../public/images/gaiact_linkedin_icon2.webp";
+import imgimages_gaiact_instagram_icon_webp from "../../public/images/gaiact_instagram_icon.webp";
+import '../styles/global.css';
+---
+
+<html lang="en">
+	<head>
+		
+        <script>
+        import { showToast } from "../components/toast";
+        (() => {
+          const els = [...document.querySelectorAll('form')];
+          if (!els?.length) return;
+          els.forEach(el => {
+            el.addEventListener('submit', async (e) => {
+              e.preventDefault();
+              const formData = new FormData(e.target);
+              const formObject = Object.fromEntries(formData);
+              formObject.emailUser = "quangnhat249@gmail.com";
+              try {
+                const response = await fetch('undefined/api/send-mail-contact', {
+                  method: 'POST',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify(formObject)
+                });
+                if (!response.ok) {
+                  throw new Error('Network response was not ok');
+                }
+                const result = await response.json();
+                showToast('Form submitted successfully!');
+              } catch (error) {
+                console.error('Error submitting form:', error);
+                showToast('Error submitting form', 'error');
+              }
+            });
+          });
+        })();
+      </script>
+      <script>
+      class LazyLoad extends HTMLElement {
+        constructor() {
+          super();
+          class HeadlessDetect {
+            allTestFunctions = [
+              "testUserAgent",
+              "testChromeWindow",
+              "testPlugins",
+              "testAppVersion",
+              "testConnectionRtt",
+            ];
+
+            constructor() {}
+
+            testUserAgent() {
+              if (/Headless/.test(window.navigator.userAgent)) {
+                return 1;
+              } else {
+                return 0;
+              }
+            }
+
+            testChromeWindow() {
+              // @ts-ignore
+              if (eval.toString().length == 33 && !window.chrome) {
+                return 1;
+              } else {
+                return 0;
+              }
+            }
+
+            testNotificationPermissions(callback) {
+              navigator.permissions
+                .query({ name: "notifications" })
+                .then(function (permissionStatus) {
+                  if (
+                    Notification.permission === "denied" &&
+                    permissionStatus.state === "prompt"
+                  ) {
+                    // Headless
+                    callback(1);
+                  } else {
+                    // Not Headless
+                    callback(0);
+                  }
+                });
+            }
+
+            testPlugins() {
+              let length = navigator.plugins.length;
+
+              return length === 0 ? 1 : 0;
+            }
+
+            testAppVersion() {
+              let appVersion = navigator.appVersion;
+
+              return /headless/i.test(appVersion) ? 1 : 0;
+            }
+
+            // Connection Rtt
+            testConnectionRtt() {
+              // @ts-ignore
+              let connection = navigator.connection;
+              let connectionRtt = connection ? connection.rtt : undefined;
+
+              if (connectionRtt === undefined) {
+                return 0;
+              } else {
+                return connectionRtt === 0 ? 1 : 0;
+              }
+            }
+
+            getHeadlessScore() {
+              let score = 0;
+              let testsRun = 0;
+
+              this.testNotificationPermissions(function (v) {
+                score += v;
+                testsRun++;
+              });
+
+              for (let i = 0; i < this.allTestFunctions.length; i++) {
+                score += this[this.allTestFunctions[i]].apply();
+                testsRun++;
+              }
+
+              return score / testsRun;
+            }
+          }
+          const headlessDetector = new HeadlessDetect();
+          if (headlessDetector.getHeadlessScore() > 0.25) {
+            while (this.firstChild) {
+              this.removeChild(this.firstChild);
+            }
+          }
+        }
+      }
+
+      customElements.define("lazy-load", LazyLoad);
+    </script>
+        <Seo seo={{ title: "EcoBuilder", description: "Page description", keywords: "", canonical: "", image: '', type: "website", themeColor: "#ffffff"}} />
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/x-icon" href=/favicons/1737683475762_images.ico /> 
+		<!-- <link
+			rel="icon"
+			type="image/svg+xml"
+			href="/favicon.svg"
+		/> -->
+		<meta
+			name="viewport"
+			content="width=device-width"
+		/>
+		<meta
+			name="generator"
+			content={Astro.generator}
+		/>
+		<title>Astro</title>
+	</head>
+	<body> <header class="flex flex-col relative shrink-0 box-border h-auto empty:min-h-[30vh] before:content-[&#x27;Header&#x27;] before:absolute before:top-0 before:left-0 before:inline-block before:py-1 before:px-2 before:bg-black/20 before:text-white before:text-sm before:rounded before:!rounded-tl-none before:!rounded-bl-none mb-[1px] header-section"><section class="header-component flex flex-col overflow-hidden bg-slate-800 shadow-[0px_4px_16px_rgba(0,0,0,0.08)] text-white" role="banner" aria-label="Header section with dark background"><div class="max-md:px-5 max-md:max-w-full px-4 py-4 sm:px-6 lg:px-8"><div class="mx-auto max-w-screen-2xl"><div class="header-component flex flex-wrap justify-between gap-10 font-bold items-center"><a href="#" width="auto" height="auto" class="shrink-0" aria-label="Homepage"><Image alt="Company Logo" src={imgimages_gii_logo_webp} width="400" height="300" class="my-auto aspect-[1.01] w-[48px] lg:w-[104px] shrink-0 self-stretch object-contain" loading="lazy" aria-label="Company logo image" /></a><nav class="max-md:hidden my-auto hidden items-center gap-8 whitespace-nowrap font-normal text-base leading-none text-white lg:flex" aria-label="Main navigation menu"><a href="/concept" width="auto" height="auto" class="" aria-label="Navigate to Concept">Concept</a><a href="/solution" width="auto" height="auto" class="" aria-label="Navigate to Solution">Solution</a><a href="/responsable" width="auto" height="auto" class="" aria-label="Navigate to Numérique Responsable">Numérique Responsable</a><a href="/blog" width="auto" height="auto" class="" aria-label="Navigate to Blog">Blog</a><a href="#" width="auto" height="auto" class="uppercase" aria-label="Navigate to MADE BY GREENWEB">MADE BY GREENWEB</a></nav><div class="max-md:hidden hidden flex-wrap items-start gap-5 self-center text-xl leading-snug lg:flex "><a href="/contact" width="auto" height="auto" class="max-md:px-5 my-auto min-w-[240px] gap-2.5 self-stretch overflow-hidden rounded-md bg-lime-500 px-12 py-2.5 text-xl font-semibold leading-snug text-slate-800 hidden lg:block" aria-label="Book a demo">Réserver une démo</a></div><div class="flex items-center lg:hidden"><button width="auto" height="auto" class="flex flex-col gap-1 items-center justify-center focus:outline-none lg:hidden" aria-label="Toggle mobile menu visibility" aria-expanded="false" aria-controls="mobileNav"><Image alt="Menu icon" src={imgimages_menu_bar_webp} width="400" height="300" class="object-contain w-8 h-8" aria-label="Mobile menu icon" /></button></div></div></div></div></section></header><main class="flex flex-col relative shrink-0 box-border h-auto empty:min-h-[30vh] before:content-[&#x27;Main&#x27;] before:absolute before:top-0 before:left-0 before:inline-block before:py-1 before:px-2 before:bg-black/20 before:text-white before:text-sm before:rounded before:!rounded-tl-none before:!rounded-bl-none mb-[1px] main-section"><section class="main-component flex flex-col bg-slate-800" aria-labelledby="digitalStrategyTitle"><section class="main-component flex flex-col bg-slate-800" aria-labelledby="digitalResponsibilityTitle"><section class="main-component flex flex-col bg-slate-800" aria-labelledby="responsibleDigitalTitle"><section class="bg-slate-800 py-6 mx-auto w-full" aria-label="Breadcrumb Simple Section"><div class="px-4 sm:px-6 lg:px-8 max-md:px-5 max-md:max-w-full" aria-label="Breadcrumb Wrapper"><div class="flex flex-wrap items-center justify-between gap-10 max-w-screen-2xl mx-auto" aria-label="Breadcrumb Container"><nav class="flex" aria-label="Breadcrumb Navigation"><ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse" aria-label="Breadcrumb List"><li class="inline-flex items-center" aria-label="Breadcrumb Home Item"><a href="#" width="auto" height="auto" class="inline-flex items-center text-sm font-medium text-white" aria-label="Home Link">ACCUEIL</a></li><li class="flex items-center" aria-label="Breadcrumb Concept Item"><Image alt="Chevron icon pointing right" src={imgimages_chevron_right_webp} width="400" height="300" class="w-4 h-4" loading="lazy" aria-label="Chevron Icon" /><span width="auto" height="auto" class="ms-1 text-sm font-medium text-white" aria-label="Concept Text">RESSPONSABLE</span></li></ol></nav></div></div></section><main class="px-4 sm:px-6 lg:px-8 max-md:px-5 max-md:max-w-full text-white py-16" aria-labelledby="responsibleDigitalTitle"><div class="max-w-screen-2xl mx-auto"><header class="flex flex-wrap lg:flex-nowrap items-center justify-between gap-2.5 text-[26px] leading-snug text-4xl lg:leading-none" aria-labelledby="responsibleDigitalTitle"><h2 width="auto" height="auto" class="text-center lg:text-left font-semibold grow shrink self-stretch mb-0 lg:!my-auto max-md:max-w-full" cssResizer="!flex-shrink mb-10">Le numérique responsable</h2><div class="flex flex-wrap flex-col flg:flex-nowrap lg:flex-row gap-10 items-center w-full mx-auto lg:mx-0 lg:mb-0 lg:min-w-[450px] lg:max-w-[450px]"><Image alt="Illustration représentant le numérique responsable" src={imgimages_gii_digital_technology_img_2_webp} width="400" height="300" class="self-center my-auto mx-auto lg:w-[376px]" /></div></header><section class="max-md:mt-10 mt-14" aria-labelledby="responsibleDigitalSubtitle"><h2 width="auto" height="auto" class="max-md:max-w-full w-full text-lg lg:text-4xl leading-snug font-semibold">Le numérique responsable permet de réunir les aspects du développement durable :</h2><ul class="w-full mt-14 text-lg lg:text-xl leading-10 flex flex-col gap-5 items-start" aria-label="List of responsible digital actions"><p width="auto" height="auto">1. Créer de la valeur économique, sociale et environnementale grâce au numérique.</p><p width="auto" height="auto">2. Réduire l&#x27;empreinte économique, sociale et environnementale du numérique.</p><p width="auto" height="auto">3. Réduire, grâce au numérique, l&#x27;empreinte économique, sociale et environnementale d&#x27;autres processus.</p></ul></section><header class="flex flex-wrap lg:flex-nowrap items-center justify-between gap-2.5 leading-snug lg:leading-none mt-0" aria-labelledby="responsibleDigitaSublTitle"><h2 width="auto" height="auto" class="text-center lg:text-left mt-0 mb-0 self-stretch lg:!my-auto max-md:max-w-full py-6 px-8 rounded-lg bg-slate-700 text-lg lg:text-xl" cssResizer="!flex-shrink mt-10 mb-10 ">À travers une chaine de valeur circulaire :</h2><div class="flex flex-wrap flex-col flg:flex-nowrap lg:flex-row gap-10 items-center w-full lg:mx-0 mb-10 lg:mb-0 lg:min-w-[450px] lg:max-w-[450px]"><Image alt="Illustration représentant le numérique responsable" src={imgimages_gii_digital_technology_img_3_webp} width="400" height="300" class="max-w-screen-md:flex self-center my-auto mx-auto lg:w-[376px] " /></div></header><div class="max-md:mt-10 max-md:max-w-full mt-12 flex min-h-[50px] w-full flex-col items-center justify-center text-xl font-semibold leading-snug text-lime-500" aria-labelledby="learnMoreButton"><button width="auto" height="auto" class="max-md:px-5 inline-flex max-w-full gap-2.5 overflow-hidden rounded-md border border-solid border-lime-500 bg-lime-500 bg-opacity-0 hover:bg-opacity-100 transition-all hover:text-white px-12 py-2.5">Contactez-nous</button></div></div></main></section><div class="px-4 sm:px-6 lg:px-8 max-md:px-5 max-md:max-w-full py-0 lg:py-16" aria-label="Digital Responsibility Title Wrapper"><div class="max-w-screen-2xl mx-auto" aria-label="Digital Responsibility Title Container"><h1 width="auto" height="auto" class="w-full self-stretch text-center text-[26px] leading-snug lg:text-4xl font-semibold lg:leading-none text-white">Le numérique responsable a différents champs d&#x27;action</h1></div></div><div class="max-md:max-w-full my-16 flex w-full flex-col justify-center py-6 text-white px-4 sm:px-6 lg:px-8 max-md:px-5 max-md:max-w-full bg-slate-700 border border-t border-b border-solid border-white" aria-label="Digital Responsibility Introduction"><p width="auto" height="auto" cssResizer="max-w-screen-2xl" class="w-full gap-2.5 self-stretch max-w-screen-2xl mx-auto text-center text-lg lg:text-xl font-semibold leading-snug lg:leading-none">En se focalisant notamment sur la véritable valeur ajoutée des services numériques.</p></div><div class="max-md:px-5 max-md:max-w-full px-4 sm:px-6 lg:px-8 " aria-label="Digital Responsibility Main Section"><div class="mx-auto max-w-screen-2xl" aria-label="Digital Responsibility Main Container"><div class="mx-auto w-full xl:max-w-screen-lg" aria-label="Digital Responsibility Grid"><div class="block flex-wrap justify-between md:flex"><div class="flex mb-6 w-full flex-col items-center justify-center rounded-2xl bg-slate-700 p-4 md:flex md:w-[calc(35%_-_10px)]" aria-label="GREEN for IT Container"><h4 width="auto" height="auto" class="text-center text-2xl font-semibold text-white w">Le GREEN for IT</h4><div class="flex items-center justify-center py-12"><div class=" ml-2 flex w-1/2 flex-shrink-0 flex-col items-end justify-center gap-1 text-white"><Image alt="GREEN for IT" src={imgimages_gii_digital_technology_img_4_webp} width="400" height="300" class="md:w-full lg:w-auto " cssResizer="!flex-shrink" /></div><div class="ml-2 flex flex-shrink-0 flex-col items-start gap-1 text-white"><p width="auto" height="auto">EFUSER</p><p width="auto" height="auto">ÉDUIRE</p><p width="auto" height="auto">ÉUTILISER</p><p width="auto" height="auto">ÉPARER</p><p width="auto" height="auto">ECYCLER</p></div></div></div><div class="mb-6 flex w-full flex-col items-center gap-12 rounded-2xl bg-slate-700 p-4 md:w-[calc(65%_-_10px)] lg:mb-10"><h4 width="auto" height="auto" class="text-center text-2xl font-semibold text-white">Le IT for GREEN</h4><Image alt="IT for GREEN" src={imgimages_gii_digital_technology_img_5_webp} width="400" height="300" class="w-full" /></div><div class="mb-6 flex w-full flex-col items-center rounded-2xl bg-slate-700 p-4 md:w-[calc(65%_-_10px)]"><h4 width="auto" height="auto" class="text-center text-2xl font-semibold text-white">Le IT for HUMAN</h4><div class="flex flex-row-reverse items-center gap-8 py-12 md:gap-0"><Image alt="IT for HUMAN" src={imgimages_gii_digital_technology_img_6_webp} width="400" height="300" class="w-full lg:w-full lg:min-w-[360px]" cssResizer="!flex-shrink" /><div class="mr-2 flex flex-col items-start gap-1 text-white"><p width="auto" height="auto">Accès à l&#x27;information pour les personnes en situation de handicap</p><p width="auto" height="auto">Aider à la santé</p><p width="auto" height="auto">Créer de l&#x27;emploi</p></div></div></div><div class="mb-6 flex w-full flex-col items-center gap-12 rounded-2xl bg-slate-700 p-4 md:w-[calc(35%_-_10px)]"><h4 width="auto" height="auto" class="text-center text-2xl font-semibold text-white">Le HUMAN for IT</h4><div class="flex flex-col-reverse md:flex-col"><div class="ml-2 flex flex-col items-start gap-1 text-white"><p width="auto" height="auto">Droits des êtres humains</p><p width="auto" height="auto">Conditions de travail</p><p width="auto" height="auto">Droits du travail</p><p width="auto" height="auto">Impacts sociaux</p></div><Image alt="HUMAN for IT" src={imgimages_gii_digital_technology_img_7_webp} width="325px" height="190px" class="w-[325px] h-[190px]" /></div></div></div></div></div></div><div class="max-md:mt-10 max-md:max-w-full mt-12 flex min-h-[50px] w-full flex-col items-center justify-center text-xl font-semibold leading-snug text-lime-500 pb-16" aria-label="Learn More Section"><button width="auto" height="auto" class="max-md:px-5 inline-flex max-w-full gap-2.5 overflow-hidden rounded-md border border-solid border-lime-500 bg-lime-500 bg-opacity-0 hover:bg-opacity-100 transition-all hover:text-white px-12 py-2.5" aria-label="Learn More Button">En savoir plus</button></div></section><div class="px-4 sm:px-6 lg:px-8 max-md:px-5 max-md:max-w-full py-16" aria-label="Digital Strategy Wrapper"><div class="max-w-screen-2xl mx-auto" aria-label="Digital Strategy Container"><div class="flex flex-col text-white" aria-label="Digital Strategy Title Wrapper"><h1 width="auto" height="auto" class="w-full self-stretch text-left lg:text-center text-[26px] leading-snug lg:text-4xl font-semibold lg:leading-none text-white" aria-label="Digital Strategy Title">Déployer une stratégie Numérique Responsable</h1></div><div class="max-md:max-w-full mt-16 flex flex-col w-full justify-center gap-10 rounded-lg lg:rounded-3xl bg-slate-700 lg:p-10 p-5 text-xl leading-10" aria-label="Digital Strategy Content Wrapper"><p width="auto" height="auto" class="text-white text-lg lg:text-xl w-full" aria-label="Digital Strategy Intro Text">Déployer une stratégie Numérique Responsable pour les entreprises et les collectivités est un projet collaboratif, à la fois progressif et progressiste.</p></div><div class="max-md:max-w-full mt-16 flex flex-col w-full gap-10 text-lg lg:text-xl leading-10 items-start" aria-label="Digital Strategy Sub Content Wrapper"><p width="auto" height="auto" class="text-white text-lg lg:text-xl" aria-label="Digital Strategy Sub Text 1">Avec la méthodologie Green IT Impact de Green WEB, concepteur de l’IT for ReGen (la technologie au service de la régénération du vivant), nos experts vous accompagnent du diagnostic jusqu’à l’obtention de résultats concrets (ou remboursés).</p><p width="auto" height="auto" class="text-white text-lg lg:text-xl" aria-label="Digital Strategy Sub Text 2">Oui, nous nous engageons sur les résultats obtenus !</p></div></div><div class="mt-4 md:mt-12 flex flex-col md:flex-row items-center justify-center gap-5 w-[90%] mx-auto md:w-full" aria-label="Digital Strategy Button Group"><div class="flex min-h-[50px] flex-col items-center justify-center text-base md:text-xl font-semibold leading-snug w-auto" aria-label="Contact Us Button Group"><button width="auto" height="auto" class="max-md:px-5 inline-flex gap-2.5 overflow-hidden rounded-md border border-solid border-lime-500 bg-lime-500 transition-all text-white px-12 py-2.5 text-center lg:w-full md:w-[338px] w-[358px]" aria-label="Contact Us Button">Contactez-nous</button></div><div class="flex min-h-[50px] flex-col items-center justify-center text-base md:text-xl font-semibold leading-snug text-lime-500 w-auto" aria-label="Reserve Demo Button Group"><button width="auto" height="auto" class="max-md:px-5 inline-flex gap-2.5 overflow-hidden rounded-md border border-solid border-lime-500 bg-lime-500 bg-opacity-0 hover:bg-opacity-100 transition-all hover:text-white px-12 py-2.5 text-center lg:w-full md:w-[338px] w-[358px]" aria-label="Reserve Demo Button">Réserver une démo</button></div></div></div></section></main><footer class="flex flex-col relative shrink-0 box-border h-auto empty:min-h-[30vh] before:content-[&#x27;Footer&#x27;] before:absolute before:top-0 before:left-0 before:inline-block before:py-1 before:px-2 before:bg-black/20 before:text-white before:text-sm before:rounded before:!rounded-tl-none before:!rounded-bl-none mb-[1px] footer-section"><div class="footer-component w-full bg-slate-800" aria-labelledby="footerDarkSectionTitle"><div class="max-md:px-5 max-md:max-w-full min-h-[338px] px-4 sm:px-6 lg:px-8 py-6" aria-label="Footer dark container"><div class="flex w-full flex-col mx-auto max-w-screen-2xl"><div class="border border-[#AECA0E] mb-3" aria-hidden="true"></div><div class="block lg:flex flex-wrap items-start" aria-label="Footer main content"><div class="max-md:max-w-full mt-4 flex min-h-[229px] items-start gap-5 flex-col flex-shrink-0 flex-1 lg:w-[150px] sm:w-full" aria-label="Footer logo container"><a href="#" width="auto" height="auto" aria-label="Logo link"><Image alt="Gii logo" src={imgimages_gii_logo_webp} width="400" height="300" class="w-[133px]" /></a><div class="flex w-36 max-w-full items-center gap-4 z-30" role="group" aria-label="Social media links"><a href="#" target="_blank" width="auto" height="auto" class="transition hover:text-[#AECA0E] w-[32px] " rel="noreferrer" aria-label="LinkedIn"><Image alt="LinkedIn icon" src={imgimages_gaiact_linkedin_icon2_webp} width="400" height="300" class="object-contain h-[24px]" loading="lazy" isAllowResize="false" /></a><a href="#" target="_blank" width="auto" height="auto" class="text-gray-700 transition hover:text-[#AECA0E] dark:text-gray-300 w-[32px]" rel="noreferrer" aria-label="Instagram"><Image alt="Instagram icon" src={imgimages_gaiact_instagram_icon_webp} width="400" height="300" class="object-contain h-[24px]" loading="lazy" isAllowResize="false" /></a></div></div><div class="flex flex-1 z-10 gap-6 justify-center items-start self-end mt-0 min-h-[133px] flex-col lg:flex-row w-full" aria-label="Footer navigation links"><div class="flex flex-col grow shrink items-start text-sm leading-snug text-white min-w-[240px] w-[392px] max-md:max-w-full" aria-label="Footer left links"><div class="flex gap-6 items-start"><a href="#" width="auto" height="auto" class="whitespace-nowrap" aria-label="Concept link">Concept</a><a href="#" width="auto" height="auto" class="whitespace-nowrap" aria-label="Solution link">Solution</a><a href="#" width="auto" height="auto" class="whitespace-nowrap" aria-label="Numérique responsable link">Numérique responsable</a></div><div class="flex gap-6 items-start mt-6"><a href="#" width="auto" height="auto" class="whitespace-nowrap" aria-label="Blog link">Blog</a><a href="#" width="auto" height="auto" class="whitespace-nowrap" aria-label="Made by GreenWeb link">Made by GreenWeb</a><a href="#" width="auto" height="auto" class="whitespace-nowrap" aria-label="Contact link">Contact</a></div><div class="flex gap-6 items-start mt-6"><p width="auto" height="auto" class="whitespace-nowrap" aria-label="Legal mentions text">Mentions légales</p></div></div><div class="flex flex-col grow shrink text-base rounded-xl min-h-[133px] min-w-[240px] lg:w-[351px] max-md:max-w-full w-full" aria-label="Footer subscription form"><p width="auto" height="auto" class="font-medium text-white w-full" aria-label="Follow Green It Impact news">Suivez l&#x27;actualité de Green It Impact</p><div class="flex gap-3 justify-center items-center lg:items-start mt-6 w-full leading-tight max-md:max-w-full flex-col lg:flex-row" aria-label="Footer subscriber form"><input type="email" class="flex flex-1 shrink gap-2.5 items-center self-stretch px-2.5 py-3 font-light bg-gray-700 rounded-lg border border-solid basis-7 border-[color:var(--Dark-dark-300,#726E6E)] min-h-[44px] min-w-[230px] text-stone-50" placeholder="Adresse e-mail" aria-label="Email input field"/><button width="auto" height="auto" class="flex gap-2.5 justify-center items-center self-stretch px-6 py-3 font-semibold text-center whitespace-nowrap bg-lime-500 rounded-lg min-h-[44px] text-slate-800 w-full lg:w-[120px] max-md:px-5" aria-label="Send button">Envoyer</button></div></div></div></div><div class="border border-[#AECA0E] mt-8" aria-hidden="true"></div><div class="max-md:max-w-full mt-6 self-center text-xs uppercase text-white inline-flex items-center" aria-label="Footer information text"><p width="auto" height="auto" cssResizer="!flex-shrink" aria-label="Footer copyright text">© <!-- -->2025<!-- --> GREEN IT IMPACT - Site web créé par la société GreenWeb. L&#x27;ensemble des données est stocké en France par<!-- --> <!-- -->Digital Forest , hébergeur éco-responsable</p></div></div></div></div></footer> </body>
+</html>
