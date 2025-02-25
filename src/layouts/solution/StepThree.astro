@@ -1,0 +1,52 @@
+
+---
+import { Image } from "astro:assets";
+import gii_step_3_pic from "../../../public/images/gii_step_3_pic.webp";
+import gii_step_3_pic_large from "../../../public/images/gii_step_3_pic_large.webp";
+---
+
+
+
+<section class="flex flex-col md:flex-row items-start w-full  text-white">
+  {/* Left Side - Text Content */}
+  <div class=" flex gap-8 md:w-1/2 2xl:pl-0 pl-4 lg:pl-20 pr-10">
+    <h2 class="text-7xl font-[400] flex items-start font-poppins lg:mt-2">
+    3.
+    </h2>
+    <div>
+      <h2 class="text-[28px] font-bold flex items-start">
+        Évaluez votre maturité
+      </h2>
+      <p class="mt-4 text-lg">
+        Cela signifie d’abord cerner la nature des actions avec un jeu de cartes qui vous immerge dans la stratégie à mettre en œuvre.
+      </p>
+      <p class="mt-10 text-lg ">
+        Activez votre plan d'actions personnalisé, stratégique et opérationnel grâce à une formulation unique et discursive, pour agir concrètement et à votre rythme. Suivez vos indicateurs clés de performance pour apprécier votre progression en temps réel, tout en réduisant votre budget IT, votre empreinte environnementale et en améliorant votre image de marque.
+      </p>
+    </div>
+  
+  </div>
+
+  <div class="2xl:hidden md:w-1/2 w-full flex justify-end mt-8 md:mt-0">
+    <Image
+    alt="Image illustrating the evaluation of your footprint"
+    src={gii_step_3_pic}
+    width="619"
+    height="300"
+    class="self-stretch my-auto lg:w-[619px] flex"
+    loading="lazy"
+    aria-label="Image related to evaluating your footprint"
+  />
+  </div>
+  <div class="2xl:flex hidden md:w-1/2 w-full justify-end mt-8 md:mt-0">
+    <Image
+    alt="Image illustrating the evaluation of your footprint"
+    src={gii_step_3_pic_large}
+    width="619"
+    height="300"
+    class="self-stretch my-auto lg:w-[619px] flex -rotate-[5.395deg]"
+    loading="lazy"
+    aria-label="Image related to evaluating your footprint"
+  />
+  </div>
+</section>

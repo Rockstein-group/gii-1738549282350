@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+interface Props {
+  mainPage: string;
+  subPage: string;
+  mainLink?: string;
+  subLink?: string;
+}
+
+import imgimages_chevron_right_webp from "../../public/images/chevron-right.webp";
+
+const { mainPage, subPage, mainLink = "#", subLink = "#" } = Astro.props;
+---
+
+<section
+  class=" container     max-xl:px-4  bg-[#243544] my-10 mx-auto w-full"
+  aria-label="Breadcrumb Section">
+  <div class="max-md:max-w-full" aria-label="Breadcrumb Wrapper">
+    <div
+      class="flex flex-wrap items-center justify-between gap-10 container mx-auto"
+      aria-label="Breadcrumb  container ">
+      <nav class="flex" aria-label="Breadcrumb Navigation">
+        <ol
+          class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse"
+          aria-label="Breadcrumb List">
+          <li
+            class="inline-flex items-center"
+            aria-label="Breadcrumb Home Item">
+            <a
+              href={mainLink}
+              class="inline-flex items-center text-sm font-medium text-white"
+              aria-label="Home Link">
+              {mainPage.toUpperCase()}
+            </a>
+          </li>
+          <li>
+            <Image
+              alt="Chevron icon pointing right"
+              src={imgimages_chevron_right_webp}
+              width="400"
+              height="300"
+              class="w-4 h-4"
+              loading="lazy"
+              aria-label="Chevron Icon"
+            />
+          </li>
+          <li class="flex items-center" aria-label="Breadcrumb Sub Page">
+            <a
+              href={subLink}
+              class="text-sm font-medium text-white"
+              aria-label="Sub Page Text">
+              {subPage.toUpperCase()}
+            </a>
+          </li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+</section>

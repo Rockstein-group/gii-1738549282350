@@ -1,0 +1,158 @@
+---
+import { Image } from "astro:assets";
+import imgimages_gii_logo_svg from "../../public/images/gii_logo.svg";
+import imgimages_menu_bar_webp from "../../public/images/menu-bar.webp";
+---
+
+<header
+  class="flex flex-col w-full h-auto mb-[1px] header-section bg-[#243544]">
+  <section
+    class=" container mx-auto max-xl:px-4  header-component flex flex-col overflow-hidden text-white"
+    role="banner"
+    aria-label="Header section with dark background">
+    <div class="max-md:max-w-full  py-4">
+      <div class="mx-auto container ">
+        <div
+          class="header-component flex flex-wrap justify-between gap-10 font-bold items-center">
+          <!-- Logo -->
+          <a href="/" class="shrink-0">
+            <Image
+              alt="Company Logo"
+              src={imgimages_gii_logo_svg}
+              width="217"
+              height="53"
+              class="my-auto shrink-0 self-stretch object-contain"
+              loading="lazy"
+            />
+          </a>
+
+          <!-- Desktop Navigation -->
+          <nav
+            class="max-md:hidden my-auto hidden items-center gap-8 whitespace-nowrap font-normal text-base leading-none text-white lg:flex"
+            aria-label="Main navigation menu">
+            <a id="concept" href="/concept" class="concept hover:text-lime-400">Concept</a>
+            <a id="solution"   href="/solution" class="hover:text-lime-400">Solution</a>
+            <a id="responsable" href="/responsable" class="hover:text-lime-400">Numérique Responsable</a>
+            <a id="/comming-soon" href="/comming-soon" class="uppercase hover:text-lime-400"
+              >MADE BY GREENWEB</a
+            >
+          </nav>
+
+          <!-- Desktop "Réserver une démo" Button -->
+          <button class="max-md:hidden hidden lg:flex">
+            <a
+              href="/contact"
+              class="bg-[#AEC90B] px-12 py-2.5 container  font-semibold text-slate-800 rounded-md hover:bg-[#AEC90B] transition"
+              aria-label="Book a demo">
+              Réserver une démo
+            </a>
+          </button>
+
+          <!-- Mobile Menu Button -->
+          <div class="flex items-center lg:hidden">
+            <button
+              id="menu-toggle"
+              class="flex flex-col gap-1 items-center justify-center focus:outline-none">
+              <Image
+                alt="Menu icon"
+                src={imgimages_menu_bar_webp}
+                width="400"
+                height="300"
+                class="object-contain w-8 h-8"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-md transform translate-x-full transition-transform duration-500 ease-[cubic-bezier(0.4, 0, 0.2, 1)] lg:hidden z-50">
+      <div
+        class="w-full absolute top-0 right-0 max-w-xs h-full bg-slate-900 text-white shadow-2xl rounded-l-lg p-6 flex flex-col">
+        <button
+          id="close-menu"
+          class="absolute top-4 right-4 text-white text-3xl">&times;</button
+        >
+        <nav
+          class="flex flex-col items-start space-y-6 mt-12 text-lg font-medium w-full">
+          <a
+          id="concept mobile"
+          href="/concept"
+            class="pl-2  w-full text-start py-3 rounded-lg hover:bg-[#AEC90B] hover:text-slate-900 transition"
+            >Concept</a
+          >
+          <a
+            id="solution mobile"
+            href="/solution"
+            class="pl-2  w-full text-start py-3 rounded-lg hover:bg-[#AEC90B] hover:text-slate-900 transition"
+            >Solution</a
+          >
+          <a
+            id="responsable mobile"
+            href="/responsable"
+            class="pl-2 w-full text-start py-3 rounded-lg hover:bg-[#AEC90B] hover:text-slate-900 transition"
+            >Numérique Responsable</a
+          >
+          <a
+             id="blog mobile"
+            href="/blog"
+            class="pl-2  w-full text-start py-3 rounded-lg hover:bg-[#AEC90B] hover:text-slate-900 transition"
+            >Blog</a
+          >
+          <a
+            href="/comming-soon"
+            class="pl-2  w-full text-start py-3 uppercase rounded-lg hover:bg-[#AEC90B] hover:text-slate-900 transition"
+            >MADE BY GREENWEB</a
+          >
+          <button class="flex">
+            <a
+              href="/contact"
+              class="bg-[#AEC90B] px-12 py-2.5 container  font-semibold text-slate-800 rounded-md hover:bg-[#AEC90B] transition"
+              aria-label="Book a demo">
+              Réserver une démo
+            </a>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </section>
+</header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const closeMenu = document.getElementById("close-menu");
+    const navLinks = document.querySelectorAll("nav a"); 
+
+const currentPath = window.location.pathname;
+
+navLinks.forEach((link) => {
+    const href = link.getAttribute("href");
+    if (href && currentPath !='/' &&  href.includes(currentPath.replace(/^\/+|\/+$/g, '')) ) {
+      link.classList.add("text-lime-400");
+    } else {
+      link.classList.remove("text-lime-400");
+    }
+  });
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("translate-x-0");
+      mobileMenu.classList.toggle("translate-x-full");
+    });
+
+    closeMenu.addEventListener("click", () => {
+      mobileMenu.classList.add("translate-x-full");
+    });
+
+    document.addEventListener("click", (event) => {
+      if (
+        !mobileMenu.contains(event.target as any) &&
+        !menuToggle.contains(event.target as any)
+      ) {
+        mobileMenu.classList.add("translate-x-full");
+      }
+    });
+  });
+</script>

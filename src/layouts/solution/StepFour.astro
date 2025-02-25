@@ -1,0 +1,51 @@
+---
+import { Image } from "astro:assets";
+import gii_rank_dashboard from "../../../public/images/gii_rank_dashboard.webp";
+import gii_rank_dashboard_large from "../../../public/images/gii_rank_dashboard_large.webp";
+---
+<div class="py-16 max-md:max-w-full self-stretch" aria-label="Step Two Wrapper">
+  <div class="flex flex-col lg:flex-row lg:items-center justify-between lg:gap-8 gap-10 relative ">
+    <!-- Image  container  -->
+    <div class="2xl:hidden relative w-full lg:w-1/3 order-2 lg:order-1 flex justify-start  left-0">
+      <Image
+        alt="GII solution illustration"
+        src={gii_rank_dashboard}
+        width="644"
+        height="479"
+        class="max-w-full lg:h-[479px] h-full object-contain w-auto rounded-lg shadow-lg"
+        loading="lazy"
+      />
+    </div>
+    <div class="2xl:flex hidden relative w-full lg:w-1/3 order-2 lg:order-1 justify-start  left-0">
+      <Image
+        alt="GII solution illustration"
+        src={gii_rank_dashboard_large}
+        width="644"
+        height="479"
+        class="max-w-full  h-full object-contain w-auto rounded-lg shadow-lg rotate-[3.991deg]"
+        loading="lazy"
+      />
+    </div>
+
+    <!-- Text  container  -->
+    <div
+      class="order-1 lg:order-2 flex flex-col gap-12 lg:px-10 px-4 py-32 bg-[#283E52] text-white rounded-xl lg:rounded-2xl w-full lg:w-2/3"
+    >
+      <div class="flex items-center gap-4">
+        <h4 class="text-7xl font-[400] flex items-start font-poppins lg:mt-2">4.</h4>
+        <h4 class="text-[28px] lg:text-3xl font-semibold leading-10">
+          Engagez vos collaborateurs et parties prenantes !
+        </h4>
+      </div>
+
+      <p class="text-lg lg:test  container   leading-8" >
+        Impliquez l’ensemble de l’écosystème interne et externe de l’entreprise pour maximiser les impacts positifs grâce à une approche innovante de "gamification" qui les challenge au quotidien.
+      </p>
+
+      <p class="text-lg lg:test  container   leading-8 ">
+        Éduquez et challengez vos collaborateurs pour les sensibiliser, les former et les transformer en ambassadeurs de votre démarche NR vertueuse. Grâce à des challenges mensuels, des quiz, des fresques, des MOOC, des vidéos et des questionnaires, suivez leurs progressions mois après mois et observez les résultats tangibles de votre stratégie numérique responsable, tout en mettant en place des actions éco-responsables adaptées.
+      </p>
+    </div>
+  </div>
+</div>
+

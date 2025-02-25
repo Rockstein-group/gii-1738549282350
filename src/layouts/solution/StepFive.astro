@@ -1,0 +1,87 @@
+---
+import { Image } from "astro:assets";
+import gii_step_5_pic from "../../../public/images/gii_step_5_pic.webp";
+import gii_step_5_pic_large from "../../../public/images/gii_step_5_pic_large.webp";
+import imgimages_gii_solution_img_5_4_svg from "../../../public/images/gii_solution_img_5_4.svg";
+import imgimages_gii_solution_img_5_1_svg from "../../../public/images/gii_solution_img_5_1.svg";
+
+import gii_solution_img_5_2_svg from "../../../public/images/gii_solution_img_5_2.svg";
+import gii_solution_img_5_3_svg from "../../../public/images/gii_solution_img_5_3.svg";
+---
+
+<section class="flex flex-col items-center gap-10">
+  <section class="flex flex-col md:flex-row items-end w-full text-white">
+    <div class="md:w-1/2 flex gap-16 2xl:pl-0 pl-4 lg:pl-20 pr-10">
+      <h2 class="text-7xl font-[400] flex items-start font-poppins lg:mt-2">
+        5.
+      </h2>
+      <div>
+        <h2 class="text-[28px] font-bold flex items-start">
+          Pilotez les évolutions !
+        </h2>
+        <p class="mt-4 text-lg">
+          Suivez, analysez et comprenez les indicateurs de performance grâce à un point mensuel réalisé par nos meilleurs experts.
+        </p>
+        <p class="mt-10 text-lg">
+          Vous pourrez aller toujours plus loin dans la démarche, les résultats et la performance environnementale, économique et sociétale. 
+        </p>
+        <p class="text-lg">
+          Nos experts vous accompagnent dans la mise en œuvre de votre stratégie en vous offrant un accompagnement personnalisé.
+        </p>
+      </div>
+    </div>
+  
+    <div class="2xl:hidden md:w-1/2 w-full flex justify-end mt-8 md:mt-0">
+      <Image alt="Image illustrating the evaluation of your footprint" src={gii_step_5_pic} width="619" height="498"
+        class="self-stretch my-auto w-auto lg:h-[498px] flex" loading="lazy"
+        aria-label="Image related to evaluating your footprint" />
+    </div>
+     
+    <div class="2xl:flex hidden md:w-1/2 w-full justify-end mt-8 md:mt-0">
+      <Image alt="Image illustrating the evaluation of your footprint" src={gii_step_5_pic_large} width="619" height="498"
+        class="   -rotate-[4.447deg] self-stretch my-auto w-auto lg:h-[498px] flex" loading="lazy"
+        aria-label="Image related to evaluating your footprint" />
+    </div>
+    
+  </section>
+  <div class="   max-xl:px-4  flex flex-wrap justify-center gap-6 mt-10 lg:flex-row md:flex-row flex-col w-full" aria-label="Step Five Features  container ">
+  
+    <!-- Feature Block -->
+    <div class="lg:flex-1 max-h-[310px] w-full lg:w-[302px] flex flex-col items-center p-4 rounded-2xl bg-[#283E52]">
+      <Image alt="Feature image for Éthique" src={imgimages_gii_solution_img_5_1_svg} width="100" height="100"
+        class="w-[200px] h-[200px] object-contain mb-4" loading="lazy" />
+      <p class="test  container   font-semibold text-center text-lime-400 leading-tight">
+        Éthique
+      </p>
+    </div>
+  
+    <!-- Feature Block -->
+    <div class="lg:flex-1 max-h-[310px] w-full lg:w-[302px] flex flex-col items-center p-4 rounded-2xl bg-[#283E52]">
+      <Image alt="Feature image for Équitable" src={gii_solution_img_5_2_svg} width="100" height="100"
+        class="w-[200px] h-[200px] object-contain mb-4" loading="lazy" />
+      <p class="test  container   font-semibold text-center text-lime-400 leading-tight">
+        Équitable
+      </p>
+    </div>
+  
+    <!-- Feature Block -->
+    <div class="lg:flex-1 max-h-[310px] w-full lg:w-[302px] flex flex-col items-center p-4 rounded-2xl bg-[#283E52]">
+      <Image alt="Feature image for Écologique" src={gii_solution_img_5_3_svg} width="100" height="100"
+        class="w-[200px] h-[200px] object-contain mb-4" loading="lazy" />
+      <p class="test  container   font-semibold text-center text-lime-400 leading-tight">
+        Écologique
+      </p>
+    </div>
+  
+    <!-- Feature Block (Adjusted for Long Text) -->
+    <div class="lg:flex-1 max-h-[310px] w-full lg:w-[302px] flex flex-col items-center p-4 rounded-2xl bg-[#283E52]">
+      <Image alt="Feature image for Porteuse de valeurs responsables" src={imgimages_gii_solution_img_5_4_svg} width="100" height="100"
+        class="w-[200px] h-[200px] object-contain mb-4" loading="lazy" />
+      <p class="test  container   font-semibold text-center text-lime-400 leading-tight">
+        Porteuse de <br /> valeurs responsables
+      </p>
+    </div>
+  
+  </div>
+
+</section>

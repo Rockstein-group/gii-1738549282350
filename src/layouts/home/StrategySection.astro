@@ -1,0 +1,84 @@
+---
+import { Image } from "astro:assets";
+import imgStrategy1 from "../../../public/images/gii_strategy_1.svg";
+import imgStrategy2 from "../../../public/images/gii_strategy_2.svg";
+import imgStrategy3 from "../../../public/images/gii_strategy_3.svg";
+---
+
+<div class="flex flex-col items-center container gap-12 mx-auto" aria-labelledby="strategyTitle">
+  <h3
+    class="max-md:max-w-full lg:h-[52px] lg:leading-[52px] w-full flex-1 shrink gap-6 self-stretch text-[36px] font-semibold leading-none text-[#283E52]"
+  >
+    Déployer une stratégie numérique responsable...
+  </h3>
+  <div
+    class="max-md:max-w-fullflex w-full container mx-auto flex-wrap items-start gap-6 self-center text-center"
+    aria-label="Strategy list"
+  >
+    <div
+      class="flex flex-wrap justify-center mx-auto gap-10 font-inter"
+      aria-label="Strategy items"
+    >
+      <article
+        class="flex flex-col items-center gap-4 w-full lg:w-[302px] lg:min-w-[240px] lg:min-h-[340px] rounded-2xl bg-white p-4 shadow-[0px_4px_16px_rgba(0,37,66,0.08)]"
+        aria-labelledby="strategyTitle0"
+      >
+        <Image
+          alt="Image for Écologique strategy"
+          src={imgStrategy1}
+          width="400"
+          height="300"
+          class="aspect-square w-[120px] max-w-full self-center object-contain mx-auto"
+        />
+        <h4
+          class="w-full text-[24px] font-semibold leading-none text-[#243544]"
+        >
+          Écologique
+        </h4>
+        <p class="text-lg text-[#283E52]">
+          Améliorer concrètement son impact environnemental.
+        </p>
+      </article>
+      <article
+        class="flex flex-col items-center gap-4 w-full lg:w-[302px] lg:min-w-[240px] lg:min-h-[340px] rounded-2xl bg-white p-4 shadow-[0px_4px_16px_rgba(0,37,66,0.08)]"
+        aria-labelledby="strategyTitle1"
+      >
+        <Image
+          alt="Image for Économique strategy"
+          src={imgStrategy2}
+          width="400"
+          height="300"
+          class="aspect-square w-[120px] max-w-full self-center object-contain mx-auto"
+        />
+        <h4
+          class="w-full text-[24px] font-semibold leading-none text-[#243544]"
+        >
+          Économique
+        </h4>
+        <p class="text-lg text-[#283E52]">
+          Réduire son budget DSI.
+        </p>
+      </article>
+      <article
+        class="flex flex-col items-center gap-4 w-full lg:w-[302px] lg:min-w-[240px] lg:min-h-[340px] rounded-2xl bg-white p-4 shadow-[0px_4px_16px_rgba(0,37,66,0.08)]"
+        aria-labelledby="strategyTitle2"
+      >
+        <Image
+          alt="Image for Sociétal strategy"
+          src={imgStrategy3}
+          width="400"
+          height="300"
+          class="aspect-square w-[120px] max-w-full self-center object-contain mx-auto"
+        />
+        <h4
+          class="w-full text-[24px] font-semibold leading-none text-[#243544]"
+        >
+          Sociétal
+        </h4>
+        <p class="text-lg text-[#283E52]">
+          Engager collectivement vos<br/>collaborateurs et parties<br/>prenantes dans une<br/>démarche positive.
+        </p>
+      </article>
+    </div>
+  </div>
+</div>

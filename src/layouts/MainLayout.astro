@@ -1,0 +1,29 @@
+---
+import '@fontsource-variable/inter';
+import Header from "../layouts/Header.astro";
+import Footer from "./Footer.astro";
+
+const { title } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"> -->
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"> -->
+  <link
+  rel="icon"
+  type="image/x-icon"
+  href="/favicons/gii_logo_seo.ico"
+/>
+</head>
+<body class="overflow-x-hidden bg-white">
+    <Header />
+  <main  class=" overflow-hidden flex flex-col relative shrink-0 box-border h-auto empty:min-h-[30vh]  main-section">
+    <slot />
+  </main>
+  <Footer />
+</body>
+</html>
