@@ -19,70 +19,54 @@ import ConformiteLoiReen from "../layouts/solution/ConformiteLoiReen.astro";
     <Seo
       seo={{
         title: "Solution - Green It Impact",
-        description: "Green IT Impact : déployez une stratégie numérique responsable avec notre solution phygitale, alliant innovation, durabilité et conformité à la loi REEN",
+        description:
+          "Green IT Impact : déployez une stratégie numérique responsable avec notre solution phygitale, alliant innovation, durabilité et conformité à la loi REEN",
         keywords: "",
         canonical: "https://gii-1739185640811.ecobuilder.io/",
-        image: "https://gii-1739185640811.ecobuilder.io/images/gii_logo_seo.webp",
+        image:
+          "https://gii-1739185640811.ecobuilder.io/images/gii_logo_seo.webp",
         type: "website",
         themeColor: "#ffffff",
       }}
     />
     <meta charset="utf-8" />
-   <link
-  rel="icon"
-  type="image/x-icon"
-  href="/favicons/gii_logo_seo.ico"
-/>
+    <link rel="icon" type="image/x-icon" href="/favicons/gii_logo_seo.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Solution - Green It Impact</title>
   </head>
   <MainLayout>
-    <div class="flex w-full flex-col justify-center  mx-auto">
+    <div class="flex w-full flex-col justify-center mx-auto">
       <Breadcrumb
-      mainPage="accueil"
-      subPage="solution"
-      mainLink="/"
-      subLink="/solution"
-    />
+        mainPage="accueil"
+        subPage="solution"
+        mainLink="/"
+        subLink="/solution"
+      />
     </div>
     <section
-      class="main-component flex flex-col text-white bg-[#243544] gap-9"
-      aria-label="Phygital Solution Section">
+      class="main-component flex flex-col text-white bg-white gap-12"
+      aria-label="Phygital Solution Section"
+    >
       <div
-        class="   max-xl:px-4  max-md:max-w-full flex w-full flex-col justify-center max-w-screen-2xl mx-auto">
+        class="max-xl:px-4 max-md:max-w-full flex w-full flex-col justify-center max-w-screen-2xl mx-auto"
+      >
         <PhygitalSolutionHeader />
       </div>
-      <div
-        class="flex flex-col justify-center text-xl font-medium leading-10 text-center text-white py-16"
-        aria-label="Green IT Impact Section">
-        <div
-          class="flex flex-row justify-center py-6 w-full border-t border-b bg-[#283E52] border-white px-4 lg:px-20 max-md:max-w-full"
-          aria-label="Inner  container ">
-          <p
-            class="text-white text-lg lg:text-xl max-w-screen-2xl mx-auto"
-            aria-label="Green IT Impact Text"
-           >
-            Green IT Impact, ce n'est pas qu'un outil ! C'est une méthodologie
-            basée sur plus de 5 années d'expérimentation pour atteindre les
-            meilleurs résultats.
-          </p>
-        </div>
-      </div>
-      <div
-        class="   max-xl:px-4   container  mx-auto">
-        <p class="text-[36px] font-[600]">
+      <div class="max-xl:px-4 container mx-auto">
+        <p class="text-[36px] font-semibold text-[#243544] my-12">
           LES 6 ÉTAPES DE LA MÉTHODOLOGIE GREEN IT IMPACT...
         </p>
       </div>
-      <div class="2xl:container w-full  mx-auto gap-24 flex flex-col">
+      <div class="2xl:container w-full mx-auto gap-24 flex flex-col">
         <StepOne />
         <StepTwo />
         <StepThree />
         <StepFour />
         <StepFive />
         <div
-          class="   max-xl:px-4  max-md:max-w-full flex w-full flex-col justify-center max-w-screen-2xl mx-auto">
+          class="max-xl:px-4 max-md:max-w-full flex w-full flex-col justify-center max-w-screen-2xl mx-auto"
+        >
           <StepSix />
         </div>
       </div>

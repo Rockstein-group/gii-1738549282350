@@ -3,44 +3,73 @@ import { Image } from "astro:assets";
 import gii_solution_artboard from "../../../public/images/gii_solution_artboard.webp";
 ---
 
-<div class=" container  mx-auto py-8 lg:py-16 max-md:max-w-full" aria-label="Main Wrapper flex flex-col items-center">
-  <div   class="text-lg text-center mb-20 lg:test  container   w-full" aria-label="Subtitle">
-    Avec la méthodologie Green It Impact, devenez un Expert en Numérique
-    Responsable !
+<div
+  class="py-8 lg:pt-16 lg:pb-0 max-md:max-w-full"
+  aria-label="Main Wrapper flex flex-col items-center"
+>
+  <div class="flex flex-col items-center gap-12" aria-label="Main  container">
+   <div class="container mx-auto text-center flex flex-col gap-12">
+    <div
+    class="flex flex-col gap-8 text-center text-[#243544]"
+    aria-label="Header Section"
+  >
+    <h1
+      class="lg:text-[54px] lg:leading-[1.5] leading-[1] font-bold max-md:max-w-full text-[2.25rem] w-full"
+      aria-label="Title"
+    >
+      La première solution complète et phygitale pour déployer une stratégie
+      numérique responsable concrète!
+    </h1>
+    <p class="text-center text-lg">
+      Avec la méthodologie Green It Impact, devenez un Expert en Numérique
+      Responsable !
+    </p>
   </div>
-  <div class="test  container  mx-auto flex flex-col items-center gap-12" aria-label="Main  container ">
-    <div class="flex flex-col gap-8 text-center text-white" aria-label="Header Section">
-      <h3  
-        class="lg:text-[54px] lg:leading-[1.2] leading-[1] font-semibold max-md:max-w-full text-[2.25rem] w-full h-auto"
-        aria-label="Title">
-        <span   aria-hidden="true">La première solution complète et
-        </span><span   class="text-lime-500 mx-1" aria-hidden="true">phygitale</span><span
-            aria-hidden="true">pour déployer une stratégie numérique responsable concrète
-          !</span>
-      </h3>
-     
-    </div>
-    <Image alt="Image representing the Phygital solution" src={gii_solution_artboard} width="927"
-    height="300" class=" w-[100%] lg:min-w-[350px] lg:max-w-[927px] max-md:max-w-full mx-auto lg:mx-0"
-    loading="lazy" aria-label="Phygital Solution Image" />
-    <div class="flex overflow-hidden flex-col items-center" aria-label="Body Content">
-      <div
-        class="flex overflow-hidden flex-col flex-wrap items-start gap-10 p-12 w-full text-lg lg:test  container   rounded-xl bg-[#283E52] max-md:px-5 max-md:max-w-full"
-        aria-label="Description Section">
-        <p class="flex-1 shrink gap-2.5 w-full leading-10 text-white max-md:max-w-full"
-          aria-label="Description Text One" >
-          Parce qu’une approche numérique responsable vise aussi à sensibiliser à la matérialité de l’invisible, nous avons conçu des jeux de cartes interactifs et éducatifs pour certaines étapes de la mise en place de la méthodologie.
-        </p>
-        <p class="flex-1 shrink gap-2.5 w-full leading-10 text-white max-md:max-w-full"
-          aria-label="Description Text Two" >
-          Observer, se questionner et manipuler avec ses mains demeurent les meilleures manières de s'imprégner des enjeux du numérique.
-        </p>
-        <div class="text-center m-auto mt-12 w-full" aria-label="Demo Request Section">
-          <button
-            class="flex-col items-center justify-center text-[14px] md:text-base lg:test  container   font-semibold leading-snug text-lime-500 max-md:px-5 inline-flex max-w-full gap-2.5 overflow-hidden rounded-md border border-solid border-lime-500 bg-[#AEC90B] bg-opacity-0 hover:bg-opacity-100 transition-all hover:text-white px-12 py-2.5 w-[100%] lg:w-auto"
-            aria-label="Button: Request a Demo" >Demander une démo</button>
-        </div>
-      </div>
-    </div>
+  <Image
+    alt="Image representing the Phygital solution"
+    src={gii_solution_artboard}
+    width="927"
+    height="300"
+    class="w-[100%] lg:min-w-[350px] lg:max-w-[927px] max-md:max-w-full mx-auto"
+    loading="lazy"
+    aria-label="Phygital Solution Image"
+  />
+   </div>
+   <div
+   class="flex flex-col gap-10 text-lg bg-[#283E52] w-full py-24"
+   aria-label="Description Section"
+ >
+   <div class="container mx-auto flex flex-col gap-10">
+     <p
+       class="flex-1 shrink gap-2.5 w-full leading-10 text-white max-md:max-w-full"
+       aria-label="Description Text One"
+     >
+       Parce qu'une approche numérique responsable vise aussi à
+       sensibiliser à la matérialité de l'invisible, nous avons conçu des
+       jeux de cartes interactifs et éducatifs pour certaines étapes de la
+       mise en place de la méthodologie.
+     </p>
+     <p
+       class="flex-1 shrink gap-2.5 w-full leading-10 text-white max-md:max-w-full"
+       aria-label="Description Text Two"
+     >
+       Observer, se questionner et manipuler avec ses mains demeurent les
+       meilleures manières de s'imprégner des enjeux du numérique.
+     </p>
+     <div
+       class="text-center m-auto mt-12"
+       aria-label="Demo Request Section"
+     >
+       <button
+         class="bg-[#AEC90B] px-12 py-2.5 font-semibold text-slate-800 rounded-md hover:bg-[#AEC90B] transition"
+         aria-label="Book a demo"
+         data-astro-source-file="G:/Project/eco-gii-new/src/layouts/Header.astro"
+         data-astro-source-loc="46:40"
+       >
+         Réserver une démo
+       </button>
+     </div>
+   </div>
+ </div>
   </div>
 </div>

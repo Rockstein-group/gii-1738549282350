@@ -1,56 +1,52 @@
-
 ---
 import { Image } from "astro:assets";
 import gii_evaluate_dashboard from "../../../public/images/gii_evaluate_dashboard.webp";
 import gii_evaluate_dashboard_large from "../../../public/images/gii_evaluate_dashboard_large.webp";
 ---
 
-
-
-<section class="flex flex-col md:flex-row items-center w-full  text-white 2xl:container  2xl:mx-auto">
+<section
+  class="flex flex-col md:flex-row items-center w-full text-[#243544] 2xl:container 2xl:mx-auto"
+>
   {/* Left Side - Text Content */}
-  <div class="md:w-1/2 2xl:pl-0 pl-4 lg:pl-20 pr-10  flex gap-8">
-    <h2 class="text-7xl font-[400] flex items-start font-poppins lg:mt-2">
-    1.
-    </h2>
-    <div>
-      <h2 class="text-[28px] font-bold flex items-start">
-        Évaluez votre maturité
-      </h2>
-      <p class="mt-4 text-lg">
-        Nous avons mis notre expérience et créativité à contribution pour
-        concevoir une évaluation de maturité exhaustive et unique.
-      </p>
-      <p class="mt-10 text-lg ">
-        Grâce à un jeu de cartes ludique et collaboratif, qui s’anime pour
-        matérialiser votre état des lieux, vous pouvez définir une ligne de
-        départ et suivre votre évolution en temps réel.
-      </p>
+  <div class="md:w-1/2 2xl:pl-0 pl-4 lg:pl-20 pr-10 flex flex-col gap-8 text-lg">
+    <div class="flex items-center gap-6 lg:mt-2">
+      <span class="text-7xl font-medium">1.</span>
+      <div>
+        <h4 class="font-semibold text-[28px]">Évaluez votre maturité</h4>
+        <p class="mt-4 text-lg">
+          Nous avons mis notre expérience et créativité à contribution pour
+          concevoir une évaluation de maturité exhaustive et unique.
+        </p>
+      </div>
     </div>
-  
+    <p class="text-lg">
+      Grâce à un jeu de cartes ludique et collaboratif, qui s'anime pour
+      matérialiser votre état des lieux, vous pouvez définir une ligne de
+      départ et suivre votre évolution en temps réel.
+    </p>
   </div>
 
   <div class="md:w-1/2 w-full flex justify-end mt-8 md:mt-0 2xl:hidden">
     <Image
-    alt="Image illustrating the evaluation of your footprint"
-    src={gii_evaluate_dashboard}
-    width="705"
-    height="300"
-    class="self-stretch my-auto lg:w-[705px] flex lg:block"
-    loading="lazy"
-    aria-label="Image related to evaluating your footprint"
-  />
+      alt="Image illustrating the evaluation of your footprint"
+      src={gii_evaluate_dashboard}
+      width="705"
+      height="300"
+      class="self-stretch my-auto lg:w-[705px] flex lg:block"
+      loading="lazy"
+      aria-label="Image related to evaluating your footprint"
+    />
   </div>
 
-  <div class="hidden 2xl:flex md:w-1/2 w-full justify-end mt-8 md:mt-0 ">
+  <div class="hidden 2xl:flex md:w-1/2 w-full justify-end mt-8 md:mt-0">
     <Image
-    alt="Image illustrating the evaluation of your footprint"
-    src={gii_evaluate_dashboard_large}
-    width="705"
-    height="300"
-    class="self-stretch my-auto lg:w-[705px] flex lg:block  -rotate-[2.91deg]"
-    loading="lazy"
-    aria-label="Image related to evaluating your footprint"
-  />
+      alt="Image illustrating the evaluation of your footprint"
+      src={gii_evaluate_dashboard_large}
+      width="705"
+      height="300"
+      class="self-stretch my-auto lg:w-[705px] flex lg:block"
+      loading="lazy"
+      aria-label="Image related to evaluating your footprint"
+    />
   </div>
 </section>
