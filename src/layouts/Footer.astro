@@ -1,163 +1,156 @@
 ---
 import { Image } from "astro:assets";
-import imgimages_gii_logo_webp from "../../public/images/gii_logo.webp";
+import imgimages_gii_logo_webp from "../../public/images/gii_logo_square.svg";
 import imgimages_gaiact_linkedin_icon2_webp from "../../public/images/gaiact_linkedin_icon2.webp";
 import imgimages_gaiact_instagram_icon_webp from "../../public/images/gaiact_instagram_icon.webp";
 import "../styles/global.css";
 ---
 
 <lazy-load>
-  <footer>
-    <div
-      class=" container  mx-auto footer-component w-full bg-[#243544]    max-xl:px-4 "
-      aria-labelledby="footerDarkSectionTitle">
+  <div>
+    <footer class="bg-[#243544]">
       <div
-        class="max-md:max-w-full min-h-[338px] py-6"
-        aria-label="Footer dark  container ">
-        <div class="flex w-full flex-col mx-auto">
-          <div class="border border-[#AECA0E] mb-3" aria-hidden="true"></div>
-
-          <div
-            class="flex flex-wrap items-start mt-4 lg:flex-row flex-col gap-6 lg:px-8"
-            aria-label="Footer main content">
+        class="container mx-auto footer-component w-full max-xl:px-4 pt-10"
+        aria-labelledby="footerDarkSectionTitle">
+        <div
+          class="max-md:max-w-full py-4"
+          aria-label="Footer dark  container ">
+          <div class="flex w-full flex-col mx-auto">
+            <div class=mb-3" aria-hidden="true"></div>
+  
             <div
-              class="w-full flex min-h-[229px] items-start gap-5 flex-col flex-shrink-0 flex-1 lg:w-[150px] sm:w-full lg:flex-row justify-between lg:gap-14"
-              aria-label="Footer logo  container ">
-              <div class="flex-1 flex flex-col gap-8">
-                <a href="#" aria-label="Logo link">
-                  <Image
-                    alt="Gii logo"
-                    src={imgimages_gii_logo_webp}
-                    width="400"
-                    height="300"
-                    class="w-[133px]"
-                  />
-                </a>
-                <div
-                  class="flex w-36 max-w-full items-center gap-4 z-30"
-                  role="group"
-                  aria-label="Social media links">
-                  <a
-                    href="#"
-                    target="_blank"
-                    class="transition hover:text-[#AECA0E] w-[32px]"
-                    rel="noreferrer"
-                    aria-label="LinkedIn">
+              class="flex flex-wrap items-start mt-4 lg:flex-row flex-col gap-6"
+              aria-label="Footer main content">
+              <div
+                class="w-full flex min-h-[229px] items-start gap-5 flex-col flex-shrink-0 flex-1 lg:w-[150px] sm:w-full lg:flex-row justify-between lg:gap-14"
+                aria-label="Footer logo  container ">
+                <div class="flex-1 flex flex-col gap-8">
+                  <a href="#" aria-label="Logo link">
                     <Image
-                      alt="LinkedIn icon"
-                      src={imgimages_gaiact_linkedin_icon2_webp}
+                      alt="Gii logo"
+                      src={imgimages_gii_logo_webp}
                       width="400"
                       height="300"
-                      class="object-contain h-[24px]"
-                      loading="lazy"
+                      class="w-[133px]"
                     />
                   </a>
-                  <a
-                    href="#"
-                    target="_blank"
-                    class="text-gray-700 transition hover:text-[#AECA0E] dark:text-gray-300 w-[32px]"
-                    rel="noreferrer"
-                    aria-label="Instagram">
-                    <Image
-                      alt="Instagram icon"
-                      src={imgimages_gaiact_instagram_icon_webp}
-                      class="object-contain h-[24px]"
-                      loading="lazy"
-                    />
-                  </a>
-                </div>
-              </div>
-              <div
-                class="flex flex-col grow shrink items-start text-sm leading-snug text-white"
-                aria-label="Footer left links">
-                <div class="flex gap-6 items-start flex-wrap">
-                  <a
-                    href="/concept"
-                    class="whitespace-nowrap"
-                    aria-label="Concept link">Concept</a
-                  >
-                  <a
-                    href="/solution"
-                    class="whitespace-nowrap"
-                    aria-label="Solution link">Solution</a
-                  >
-                  <a
-                    href="/responsable"
-                    class="whitespace-nowrap"
-                    aria-label="Numérique responsable link"
-                    >Numérique responsable</a
-                  >
-                </div>
-                <div class="flex gap-6 items-start mt-6 flex-wrap">
-                  <a href="/comming-soon" class="whitespace-nowrap" aria-label="Blog link"
-                    >Blog</a
-                  >
-                  <a
-                    href="/comming-soon"
-                    class="whitespace-nowrap"
-                    aria-label="Made by GreenWeb link">Made by GreenWeb</a
-                  >
-                  <a
-                    href="/contact"
-                    class="whitespace-nowrap"
-                    aria-label="Contact link">Contact</a
-                  >
-                </div>
-                <div class="flex gap-6 items-start mt-6">
-                  <p class="whitespace-nowrap" aria-label="Legal mentions text">
-                    Mentions légales
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="flex flex-1 z-10 gap-6 justify-end  items-end mt-0 min-h-[133px] flex-col lg:flex-row w-full"
-              aria-label="Footer navigation links">
-              <div
-                class="flex flex-col text-base rounded-xl min-h-[133px] min-w-[240px] w-full lg:max-w-[439px] items-end"
-                aria-label="Footer subscription form">
-                <div class="flex justify-start w-full">
-                  <p
-                  class="font-medium text-white w-full block"
-                  aria-label="Follow Green It Impact news">
-                  Suivez l'actualité de Green It Impact
-                </p>
-                </div>
-                <div class="flex justify-end w-full">
                   <div
-                  class="flex gap-3 items-end lg:items-start mt-6 w-full flex-col lg:flex-row lg:max-w-[439px] justify-end"
-                  aria-label="Footer subscriber form">
-                  <input
-                    type="email"
-                    class="flex-1 w-full px-2.5 py-3 bg-gray-700 rounded-lg border border-solid border-gray-600 min-h-[44px] text-white"
-                    placeholder="Adresse e-mail"
-                    aria-label="Email input field"
-                  />
-                  <button
-                    class="px-6 py-3 font-semibold text-center bg-[#AEC90B] rounded-lg min-h-[44px] text-slate-800 w-full lg:w-[120px]"
-                    aria-label="Send button">
-                    Envoyer
-                  </button>
+                    class="flex w-36 max-w-full items-center gap-4 z-30"
+                    role="group"
+                    aria-label="Social media links">
+                    <a
+                      href="#"
+                      target="_blank"
+                      class="transition hover:text-[#AECA0E] w-[32px]"
+                      rel="noreferrer"
+                      aria-label="LinkedIn">
+                      <Image
+                        alt="LinkedIn icon"
+                        src={imgimages_gaiact_linkedin_icon2_webp}
+                        width="400"
+                        height="300"
+                        class="object-contain h-[24px]"
+                        loading="lazy"
+                      />
+                    </a>
+                    <a
+                      href="#"
+                      target="_blank"
+                      class="text-gray-700 transition hover:text-[#AECA0E] dark:text-gray-300 w-[32px]"
+                      rel="noreferrer"
+                      aria-label="Instagram">
+                      <Image
+                        alt="Instagram icon"
+                        src={imgimages_gaiact_instagram_icon_webp}
+                        class="object-contain h-[24px]"
+                        loading="lazy"
+                      />
+                    </a>
+                  </div>
                 </div>
+                <div
+                  class="flex flex-col grow shrink items-start text-sm leading-snug text-white"
+                  aria-label="Footer left links">
+                  <div class="flex gap-6 items-start flex-wrap">
+                    <a
+                      href="/concept"
+                      class="whitespace-nowrap"
+                      aria-label="Concept link">Concept</a
+                    >
+                    <a
+                      href="/solution"
+                      class="whitespace-nowrap"
+                      aria-label="Solution link">Solution</a
+                    >
+                    <a
+                      href="/responsable"
+                      class="whitespace-nowrap"
+                      aria-label="Numérique responsable link"
+                      >Numérique responsable</a
+                    >
+                  </div>
+                  <div class="flex gap-6 items-start mt-6 flex-wrap">
+                    <a
+                      href="/comming-soon"
+                      class="whitespace-nowrap"
+                      aria-label="Made by GreenWeb link">Made by GreenWeb</a
+                    >
+                    <a
+                      href="/contact"
+                      class="whitespace-nowrap"
+                      aria-label="Contact link">Contact</a
+                    >
+                  </div>
                 </div>
-              
+              </div>
+  
+              <div
+                class="flex flex-1 z-10 gap-6 justify-end  items-end mt-0 min-h-[133px] flex-col lg:flex-row w-full"
+                aria-label="Footer navigation links">
+                <div
+                  class="flex flex-col text-base rounded-xl min-h-[133px] min-w-[240px] w-full lg:max-w-[439px] items-end"
+                  aria-label="Footer subscription form">
+                  <div class="flex justify-start w-full">
+                    <p
+                    class="font-medium text-white w-full block"
+                    aria-label="Follow Green It Impact news">
+                    Suivez l'actualité de Green It Impact
+                  </p>
+                  </div>
+                  <div class="flex justify-end w-full">
+                    <div
+                    class="flex gap-3 items-end lg:items-start mt-6 w-full flex-col lg:flex-row lg:max-w-[439px] justify-end"
+                    aria-label="Footer subscriber form">
+                    <input
+                      type="email"
+                      class="flex-1 w-full px-2.5 py-3 bg-gray-700 rounded-lg border border-solid border-gray-600 min-h-[44px] text-white"
+                      placeholder="Adresse e-mail"
+                      aria-label="Email input field"
+                    />
+                    <button
+                      class="px-6 py-3 font-semibold text-center bg-[#AEC90B] rounded-lg min-h-[44px] text-slate-800 w-full lg:w-[120px]"
+                      aria-label="Send button">
+                      Envoyer
+                    </button>
+                  </div>
+                  </div>
+                
+                </div>
               </div>
             </div>
-          </div>
-
-          <div class="border border-[#AECA0E] mt-8" aria-hidden="true"></div>
-          <div
-            class="max-md:max-w-full mt-6 self-center container s uppercase text-white  items-center"
-            aria-label="Footer information text">
-            <p class="text-center" aria-label="Footer copyright text">
-              © 2025 GREEN IT IMPACT - Site web créé par la société GreenWeb.
-              L'ensemble des données est stocké en France par <a class="border-b-[1px]" href="/">Digital Forest</a>,
-              hébergeur éco-responsable.
-            </p>
+            <div
+              class="max-md:max-w-full mt-6 self-center container s uppercase text-white  items-center"
+              aria-label="Footer information text">
+              <p class="text-center text-xs" aria-label="Footer copyright text">
+                © 2025 GREEN IT IMPACT - Site web créé par la société GreenWeb. L'ensemble des données est stocké en France par Digital Forest, hébergeur éco-responsable
+              </p>
+            </div>
           </div>
         </div>
       </div>
+    </footer>
+    <div class="container mx-auto py-1">
+      <p class="text-xs text-center lg:text-left">Mention légale & Déclaration Environnementale / Plan du site</p>
     </div>
-  </footer>
+  </div>
 </lazy-load>
