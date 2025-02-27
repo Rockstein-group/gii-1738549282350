@@ -15,47 +15,59 @@ import DigitalReponsable from "../layouts/responsable/DigitalReponsable.astro";
     <Seo
       seo={{
         title: "Numérique Responsable - Green It Impact",
-        description: "Adoptez un numérique responsable avec Green IT Impact. Réduisez votre empreinte écologique en alliant technologie durable et développement durable.",
+        description:
+          "Adoptez un numérique responsable avec Green IT Impact. Réduisez votre empreinte écologique en alliant technologie durable et développement durable.",
         keywords: "",
         canonical: "https://gii-1739185640811.ecobuilder.io/",
-        image: "https://gii-1739185640811.ecobuilder.io/images/gii_logo_seo.webp",
+        image:
+          "https://gii-1739185640811.ecobuilder.io/images/gii_logo_seo.webp",
         type: "website",
         themeColor: "#ffffff",
       }}
     />
     <meta charset="utf-8" />
-   <link
-  rel="icon"
-  type="image/x-icon"
-  href="/favicons/gii_logo_seo.ico"
-/>
+    <link rel="icon" type="image/x-icon" href="/favicons/gii_logo_seo.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Numérique Responsable - Green It Impact</title>
   </head>
-    <MainLayout>
-      <section
-        class="main-component flex flex-col gap-9"
-        aria-labelledby="digitalGrowthTitle">
-        <div class=" container  flex w-full flex-col justify-center  mx-auto">
-          <Breadcrumb mainPage="accueil" subPage="numérique responsable" mainLink="/" subLink="/responsable"/>
-        </div>
-        <div class="max-md:max-w-full flex w-full flex-col justify-center  mx-auto">
-          <DigitalGrow/>
-        </div>
-        <div class="   max-xl:px-4  flex w-full flex-col justify-center container mx-auto">
-          <CurrentDay/>
-        </div>
-        <div class="flex w-full flex-col justify-center  mx-auto">
-          <KeyFeature/>
-        </div>
-        <div class="   max-xl:px-4   max-md:max-w-full flex w-full flex-col justify-center container mx-auto">
-          <ResponsableDigital/>
-        </div>
-   
-        <div class="max-md:max-w-full flex w-full flex-col justify-center mx-auto">
-          <DigitalReponsable/>
-        </div>
-      </section>
-    </MainLayout>
+  <MainLayout>
+    <section
+      class="main-component flex flex-col"
+      aria-labelledby="digitalGrowthTitle"
+    >
+      <div class="container flex w-full flex-col justify-center mx-auto">
+        <Breadcrumb
+          mainPage="accueil"
+          subPage="numérique responsable"
+          mainLink="/"
+          subLink="/responsable"
+        />
+      </div>
+      <div
+        class="max-md:max-w-full flex w-full flex-col justify-center mx-auto"
+      >
+        <DigitalGrow />
+      </div>
+      <div
+        class="flex w-full flex-col justify-center"
+      >
+        <CurrentDay />
+      </div>
+      <div class="flex w-full flex-col justify-center mx-auto">
+        <KeyFeature />
+      </div>
+      <div
+        class="max-md:max-w-full flex w-full flex-col justify-center"
+      >
+        <ResponsableDigital />
+      </div>
+
+      <div
+        class="max-md:max-w-full flex w-full flex-col justify-center mx-auto"
+      >
+        <DigitalReponsable />
+      </div>
+    </section>
+  </MainLayout>
 </html>

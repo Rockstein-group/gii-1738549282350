@@ -79,7 +79,7 @@ import Breadcrumb from "../components/Breadcrumb.astro";
   <MainLayout>
  
     <section
-      class="main-component flex flex-col overflow-hidden bg-[#243544] text-white">
+      class="main-component flex flex-col overflow-hidden">
       <div class="max-md:max-w-full flex w-full flex-col justify-center container mx-auto">
         <Breadcrumb
         mainPage="accueil"
@@ -91,7 +91,7 @@ import Breadcrumb from "../components/Breadcrumb.astro";
     
       
       <div
-        class="max-md:px-5 max-md:max-w-full px-4 py-10 sm:px-6 lg:px-8">
+        class="max-md:px-5 max-md:max-w-full px-4 py-10  lg:px-8">
         <div class="mx-auto container ">
           <div
             class="flex flex-col flex-wrap w-full justify-center gap-8 lg:gap-14">
@@ -106,7 +106,7 @@ import Breadcrumb from "../components/Breadcrumb.astro";
             <h2
               
               
-              class="lg:text-[54px] leading-[2.5rem] font-semibold text-center text-white text-4xl"
+              class="lg:text-[54px] leading-[2.5rem] font-semibold text-center text-[#243544] text-4xl"
              >
               Une info, une démo ? Contactez-nous !
             </h2>
@@ -114,11 +114,11 @@ import Breadcrumb from "../components/Breadcrumb.astro";
             <div
               
               
-              class="mt-0 text-2xl leading-5 text-center text-white max-md:max-w-full"
+              class="mt-0 text-2xl leading-5 text-center text-[#243544] max-md:max-w-full"
              >
               Veuillez compléter tous les champs.
             </div>
-          </div><form as="form" aria-labelledby="contactGiiFormTitle">
+          </div><form aria-labelledby="contactGiiFormTitle">
             <div
               class="max-md:mt-10 mx-auto mt-14 flex w-full max-w-full flex-col justify-center self-center lg:max-w-screen-lg"
               role="form"
@@ -130,12 +130,12 @@ import Breadcrumb from "../components/Breadcrumb.astro";
                   <label
                     
                     
-                    class="test  container   font-medium leading-none text-white"
+                    class="test  container   font-medium leading-none text-[#243544]"
                     >Prénom</label
                   ><input
                     name="firstName"
                     placeholder="Entrez votre prénom"
-                    autoComplete="given-name"
+                    auto-complete="given-name"
                     required=""
                     class="mt-2 w-full flex-1 shrink gap-2 overflow-hidden rounded-md border border-solid border-zinc-300 bg-[#283E52] px-4 py-3 text-base text-neutral-400"
                   />
@@ -144,12 +144,12 @@ import Breadcrumb from "../components/Breadcrumb.astro";
                   <label
                     
                     
-                    class="test  container   font-medium leading-none text-white"
+                    class="test  container   font-medium leading-none text-[#243544]"
                     >Nom</label
                   ><input
                     name="lastName"
                     placeholder="Entrez votre nom"
-                    autoComplete="family-name"
+                    auto-complete="family-name"
                     required=""
                     class="mt-2 w-full flex-1 shrink gap-2 overflow-hidden rounded-md border border-solid border-zinc-300 bg-[#283E52] px-4 py-3 text-base text-neutral-400"
                   />
@@ -159,12 +159,12 @@ import Breadcrumb from "../components/Breadcrumb.astro";
                 <label
                   
                   
-                  class="test  container   font-medium leading-none text-white"
+                  class="test  container   font-medium leading-none text-[#243544]"
                   >Adresse e-mail</label
                 ><input
                   name="email"
                   placeholder="Entrez votre adresse e-mail"
-                  autoComplete="email"
+                  auto-complete="email"
                   required=""
                   class="mt-2 w-full flex-1 shrink gap-2 overflow-hidden rounded-md border border-solid border-zinc-300 bg-[#283E52] px-4 py-3 text-base text-neutral-400"
                 />
@@ -173,12 +173,12 @@ import Breadcrumb from "../components/Breadcrumb.astro";
                 <label
                   
                   
-                  class="test  container   font-medium leading-none text-white"
+                  class="test  container   font-medium leading-none text-[#243544]"
                   >Société</label
                 ><input
                   name="company"
                   placeholder="Entrez votre société"
-                  autoComplete="organization"
+                  auto-complete="organization"
                   class="mt-2 w-full flex-1 shrink gap-2 overflow-hidden rounded-md border border-solid border-zinc-300 bg-[#283E52] px-4 py-3 text-base text-neutral-400"
                 />
               </div><div
@@ -186,7 +186,7 @@ import Breadcrumb from "../components/Breadcrumb.astro";
                 <label
                   
                   
-                  class="test  container   font-medium leading-none text-white"
+                  class="test  container   font-medium leading-none text-[#243544]"
                   >Message</label
                 ><textarea
                   placeholder="Entrez votre message"
@@ -203,18 +203,17 @@ import Breadcrumb from "../components/Breadcrumb.astro";
                     
                     for="privacyCheckbox"
                     class="leading-snug lg:leading-none"
-                    >En cochant cette case, j’accepte la politique de
+                    >En cochant cette case, j'accepte la politique de
                     confidentialité</label>
                 </div>
-              </div><div
-                class="pb-16 text-center flex flex-row justify-center mt-10 lg:mt-12"
+              </div>
+              <div
+                class="pb-16 text-center mt-10 lg:mt-12 w-full lg:w-auto mx-auto"
                 role="presentation">
-                <button
-                  
-                  
-                  type="submit"
-                  class="max-md:px-5 w-full min-h-[50px] lg:w-auto flex-col items-center justify-center gap-2.5 overflow-hidden rounded-md bg-[#AEC90B] px-12 py-2.5 text-[14px] font-semibold leading-snug text-gray-900 transition-all md:w-auto md:min-w-[400px] md:text-base lg:test  container  "
-                  aria-label="Submit Contact Form">Envoyer</button>
+
+                <button type="submit" class="bg-[#AEC90B] px-12 py-2.5 font-semibold inline-block w-full lg:w-auto text-slate-800 rounded-md hover:bg-[#AEC90B] transition" aria-label="Book a demo">
+                  Envoyer
+                  </button>
               </div>
             </div>
           </form>

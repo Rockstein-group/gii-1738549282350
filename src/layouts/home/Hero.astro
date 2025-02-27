@@ -6,21 +6,26 @@ import gii_hero_large_webp from "../../../public/images/gii_hero_large.webp";
 ---
 
 <section
-  class="container max-xl:px-4  2xl:mx-auto lg:px-0w-full grid grid-cols-1 xl:grid-cols-2 font-semibold text-white py-16 gap-6"
-  aria-label="Hero Dark Section Wrapper lg:h-576[px]">
+  class="container px-4 mx-auto w-full grid grid-cols-1 xl:grid-cols-2 font-semibold text-white py-16 gap-6"
+  aria-label="Hero Dark Section Wrapper lg:h-576[px]"
+>
   <div
     class="flex lg:min-h-[440px] w-full flex-col items-start gap-12 z-20"
-    aria-label="Left Content of Hero Dark Section">
+    aria-label="Left Content of Hero Dark Section"
+  >
     <h1
       class="text-[#243544] container text-4xl self-stretch lg:text-[54px] leading-snug font-bold flex flex-col items-start gap-4"
-      aria-label="Main title for Hero Dark Section">
+      aria-label="Main title for Hero Dark Section"
+    >
       Agissez pour un Numérique plus éthique et soutenable
     </h1>
     <nav
-      class="max-md:max-w-full flex flex-wrap items-center gap-1 md:gap-4 lg:gap-9 container  md:text-2xl"
-      aria-label="Hero Dark Navigation">
-      <span class="my-auto self-stretch text-[#243544] font-normal" aria-label="Navigation Item 1: Évaluez"
-        >Évaluez</span
+      class="max-md:max-w-full flex flex-wrap items-center justify-between md:justify-start gap-1 md:gap-4 lg:gap-9 container md:text-2xl"
+      aria-label="Hero Dark Navigation"
+    >
+      <span
+        class="my-auto self-stretch text-[#243544] font-normal"
+        aria-label="Navigation Item 1: Évaluez">Évaluez</span
       >
       <Image
         alt="arrowRightIcon"
@@ -30,8 +35,9 @@ import gii_hero_large_webp from "../../../public/images/gii_hero_large.webp";
         class="my-auto aspect-[1.1] w-[40px] lg:w-[54px] shrink-0 self-stretch object-contain"
         aria-label="Right arrow icon for navigation"
       />
-      <span class="my-auto self-stretch text-[#243544] font-normal" aria-label="Navigation Item 2: Activez"
-        >Activez</span
+      <span
+        class="my-auto self-stretch text-[#243544] font-normal"
+        aria-label="Navigation Item 2: Activez">Activez</span
       >
       <Image
         alt="arrowRightIcon"
@@ -45,14 +51,17 @@ import gii_hero_large_webp from "../../../public/images/gii_hero_large.webp";
         aria-label="Navigation Item 3: Améliorez">Améliorez</span
       >
     </nav>
-    <a
-      href="/contact"
-      class="mt-0 overflow-hidden rounded-md bg-[#AEC90B] px-12 py-2.5 text-[14px] md:text-base lg:test  container   leading-snug text-slate-800 md:ml-0 md:mr-0 lg:w-auto text-center"
-      aria-label="Button to reserve a demo">Réserver une démo</a
-    >
+    <div class="w-full lg:w-auto">
+      <a
+        href="/contact"
+        class="bg-[#AEC90B] px-12 py-2.5 container font-semibold text-slate-800 rounded-md hover:bg-[#AEC90B] transition inline-block text-center"
+        aria-label="Button to reserve a demo">Réserver une démo</a
+      >
+    </div>
   </div>
   <div
-    class="2xl:hidden lg:min-w-[715px] lg:h-[550px] w-full relative lg:absolute right-0 flex justify-end z-0">
+    class="2xl:hidden lg:min-w-[715px] lg:h-[550px] w-full relative lg:absolute right-0 flex justify-end z-0"
+  >
     <Image
       alt="Banner right image"
       src={gii_hero_large_webp}
@@ -63,15 +72,15 @@ import gii_hero_large_webp from "../../../public/images/gii_hero_large.webp";
     />
   </div>
   <div
-    class="hidden 2xl:flex lg:min-w-[715px] lg:h-[550px] w-full relative right-0  justify-end z-0">
+    class="hidden 2xl:flex lg:min-w-[715px] lg:h-[550px] w-full relative right-0 justify-end z-0"
+  >
     <Image
-    alt="Banner right image"
-    src={imgimages_1739172258787_Web_1920___1_1_webp}
-    width="667"
-    height="576"
-    class="object-contain w-full lg:w-auto  h-full"
-    aria-label="Right side image of the Hero Dark Banner"
-  />
-    
+      alt="Banner right image"
+      src={imgimages_1739172258787_Web_1920___1_1_webp}
+      width="667"
+      height="576"
+      class="object-contain w-full lg:w-auto h-full"
+      aria-label="Right side image of the Hero Dark Banner"
+    />
   </div>
 </section>
