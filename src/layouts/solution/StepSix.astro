@@ -1,62 +1,68 @@
 ---
 import { Image } from "astro:assets";
+import { styles } from "../../constant";
 import imgimages_gii_solution_img_6_webp from "../../../public/images/gii_solution_img_6.webp";
 ---
 
-<div class="test  container  mx-auto">
-  <div
-    class="flex flex-wrap flex-col flg:flex-nowrap lg:flex-row gap-10 items-center w-full">
+<div class={`container max-w-screen-2xl mx-auto px-4 lg:px-20 2xl:px-0`}>
+  <div class="flex flex-wrap flex-col lg:flex-row gap-10 items-center w-full">
     <div class="order-2 lg:order-1 lg:w-auto">
       <Image
         alt="Image illustrating the certification for responsible digital practices"
         src={imgimages_gii_solution_img_6_webp}
         width="400"
         height="300"
-        class="my-auto max-w-screen-md:flex self-center mx-auto lg:w-[376px]"
+        class="my-auto lg:w-[376px] mx-auto"
         loading="lazy"
-        aria-label="Image related to obtaining the responsible digital certification"
       />
     </div>
-    <div
-      class="flex flex-col flex-1 shrink justify-center items-center self-stretch p-10 my-auto rounded-xl lg:rounded-3xl basis-0 bg-[#283E52] min-w-[240px] max-md:px-5 max-md:max-w-full order-1 lg:order-2">
-      <div
-        class="flex flex-nowrap gap-2.5 items-center self-stretch w-full max-md:max-w-full">
-        <h4
-          class="flex-shrink-0 self-stretch my-auto lg:text-7xl font-medium whitespace-nowrap lg:w-[72px] text-left text-4xl text-white"
-          aria-label="Step number: 6">
+    
+    <div class={`flex flex-col flex-1 justify-center items-center p-10 rounded-xl lg:rounded-3xl basis-0 text-[${styles.baseTextColor}] min-w-[240px] order-1 lg:order-2 bg-white`}>
+      <div class="flex gap-2.5 items-center w-full">
+        <h4 
+          class="text-4xl lg:text-7xl font-medium lg:w-[72px]"
+          aria-label="Step number: 6"
+        >
           6.
-        </h4><div
-          class="text-[28px] self-stretch my-auto font-semibold leading-10 flex-1 max-md:max-w-full text-white"
-          aria-label="Step Title: Obtenez la labellisation Numérique Responsable !">
+        </h4>
+        <div 
+          class="text-[28px] font-semibold leading-10 flex-1"
+          aria-label="Step Title: Obtenez la labellisation Numérique Responsable !"
+        >
           Obtenez la labellisation Numérique Responsable !
         </div>
-      </div><div class="mt-10 text-white flex flex-col gap-8 lg:gap-10">
-        <div
-          class="text-lg lg:test  container   leading-8 text-white"
-          aria-label="Detail text for Step Six">
-          Obtenez le seul label européen pour le numérique responsable afin de
-          confirmer, démontrer et certifier la pertinence des actions mises en
-          œuvre, et d&#x27;en être concrètement récompensé !
-        </div>
+      </div>
+      
+      <div class="mt-10 flex flex-col gap-8 lg:gap-10">
+        <p 
+          class="text-lg leading-8"
+          aria-label="Detail text for Step Six"
+        >
+          Obtenez le seul label européen pour le numérique responsable afin de confirmer, 
+          démontrer et certifier la pertinence des actions mises en œuvre, et d'en être 
+          concrètement récompensé !
+        </p>
       </div>
     </div>
-  </div><div
-    class="flex flex-col justify-center pt-10 mt-2.5 container  w-full items-center">
+  </div>
+
+  <div class="flex flex-col justify-center items-center pt-10 mt-2.5 w-full text-white">
     <p
-      class="mx-autoleading-8 lg:leading-10 text-center text-white container  w-full h-auto"
-      aria-label="Call to action for Step Six">
-      Vous souhaitez agir pour un numérique responsable et obtenir des résultats
-      tangibles ?
+      class="text-center leading-8 lg:leading-10 w-full"
+      aria-label="Call to action for Step Six"
+    >
+      Vous souhaitez agir pour un numérique responsable et obtenir des résultats tangibles ?
     </p>
-    <div
-      class="mx-auto  max-md:mt-10 max-md:max-w-full mt-12 flex min-h-[50px] w-full  items-center justify-center container  font-semibold leading-snug text-lime-500">
-      <button
-        class="w-full text-center gap-2.5 overflow-hidden rounded-md border border-solid border-lime-500 bg-[#AEC90B] bg-opacity-0 hover:bg-opacity-100 transition-all hover:text-white px-12 py-2.5 lg:w-[410px]"
+    
+    <div class="mt-12 flex justify-center w-full">
+      <a 
+        href="/contact"
+        class="bg-[#B7D433] text-[#243544] font-medium text-lg px-8 py-4 rounded-md hover:bg-[#9AB22B] transition-colors duration-200 lg:w-[410px] text-center max-md:w-full"
         aria-label="Contact button for responsible digital actions"
-        ><a href="/contact">
-          Contactez-nous
-          </a></button
+        tabindex="0"
       >
+        Réserver une démo
+      </a>
     </div>
   </div>
 </div>
