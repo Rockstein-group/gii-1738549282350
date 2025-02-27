@@ -7,7 +7,7 @@ import imgimages_menu_bar_webp from "../../public/images/menu-bar.webp";
 <header
   class="flex flex-col w-full h-auto mb-[1px] header-section bg-[#243544]">
   <section
-    class=" container mx-auto max-xl:px-4  header-component flex flex-col overflow-hidden text-white"
+    class=" container mx-auto px-4 header-component flex flex-col overflow-hidden text-white"
     role="banner"
     aria-label="Header section with dark background">
     <div class="max-md:max-w-full  py-4">
@@ -30,10 +30,10 @@ import imgimages_menu_bar_webp from "../../public/images/menu-bar.webp";
           <nav
             class="max-md:hidden my-auto hidden items-center gap-8 whitespace-nowrap font-normal text-base leading-none text-white lg:flex"
             aria-label="Main navigation menu">
-            <a id="concept" href="/concept" class="concept hover:text-lime-400">Concept</a>
-            <a id="solution"   href="/solution" class="hover:text-lime-400">Solution</a>
-            <a id="responsable" href="/responsable" class="hover:text-lime-400">Numérique Responsable</a>
-            <a id="/comming-soon" href="/comming-soon" class="uppercase hover:text-lime-400"
+            <a id="concept" href="/concept" class="concept hover:text-[#AEC90B]">Concept</a>
+            <a id="solution"   href="/solution" class="hover:text-[#AEC90B]">Solution</a>
+            <a id="responsable" href="/responsable" class="hover:text-[#AEC90B]">Numérique Responsable</a>
+            <a id="/comming-soon" href="/comming-soon" class="uppercase hover:text-[#AEC90B]"
               >MADE BY GREENWEB</a
             >
           </nav>
@@ -96,12 +96,6 @@ import imgimages_menu_bar_webp from "../../public/images/menu-bar.webp";
             >Numérique Responsable</a
           >
           <a
-             id="blog mobile"
-            href="/blog"
-            class="pl-2  w-full text-start py-3 rounded-lg hover:bg-[#AEC90B] hover:text-slate-900 transition"
-            >Blog</a
-          >
-          <a
             href="/comming-soon"
             class="pl-2  w-full text-start py-3 uppercase rounded-lg hover:bg-[#AEC90B] hover:text-slate-900 transition"
             >MADE BY GREENWEB</a
@@ -132,9 +126,9 @@ const currentPath = window.location.pathname;
 navLinks.forEach((link) => {
     const href = link.getAttribute("href");
     if (href && currentPath !='/' &&  href.includes(currentPath.replace(/^\/+|\/+$/g, '')) ) {
-      link.classList.add("text-lime-400");
+      link.classList.add("text-[#AEC90B]");
     } else {
-      link.classList.remove("text-lime-400");
+      link.classList.remove("text-[#AEC90B]");
     }
   });
     menuToggle.addEventListener("click", () => {
