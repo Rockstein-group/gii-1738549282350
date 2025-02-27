@@ -45,30 +45,32 @@ import ConformiteLoiReen from "../layouts/solution/ConformiteLoiReen.astro";
       />
     </div>
     <section
-      class="main-component flex flex-col text-white bg-white gap-12"
-      aria-label="Phygital Solution Section"
-    >
+      class="main-component flex flex-col bg-white"
+      aria-label="Phygital Solution Section">
       <div
-        class="max-xl:px-4 max-md:max-w-full flex w-full flex-col justify-center max-w-screen-2xl mx-auto"
-      >
+        class="">
         <PhygitalSolutionHeader />
       </div>
-      <div class="max-xl:px-4 container mx-auto">
-        <p class="text-[36px] font-semibold text-[#243544] my-12">
+      <div class="2xl:mx-auto 2xl:container w-full mx-auto py-12 lg:py-24 px-4 lg:px-20 2xl:px-0">
+        <p class="text-[36px] font-semibold text-[#243544]">
           LES 6 ÉTAPES DE LA MÉTHODOLOGIE GREEN IT IMPACT...
         </p>
       </div>
-      <div class="2xl:container w-full mx-auto gap-24 flex flex-col">
-        <StepOne />
+      <StepOne />
+      <div class="bg-[#283E52] relative">
         <StepTwo />
+      </div>
+      <div class="relative">
         <StepThree />
+      </div>
+
+      <div class="bg-[#283E52] relative">
         <StepFour />
-        <StepFive />
-        <div
-          class="max-xl:px-4 max-md:max-w-full flex w-full flex-col justify-center max-w-screen-2xl mx-auto"
-        >
-          <StepSix />
-        </div>
+      </div>
+      <StepFive />
+      <div
+        class="bg-[#283E52] py-12 lg:py-24">
+        <StepSix />
       </div>
       <ConformiteLoiReen />
     </section>
