@@ -1,7 +1,6 @@
 ---
 import { Image } from "astro:assets";
 import imgimages_gii_banner_arrow_right_webp from "../../../public/images/gii_banner_arrow_right.webp";
-import imgimages_1739172258787_Web_1920___1_1_webp from "../../../public/images/gii_hero_pic_2.webp";
 import gii_hero_large_webp from "../../../public/images/gii_hero_large_2.webp";
 ---
 
@@ -54,32 +53,20 @@ import gii_hero_large_webp from "../../../public/images/gii_hero_large_2.webp";
     <div class="w-full lg:w-auto">
       <a
         href="/contact"
-        class="bg-[#AEC90B] px-12 py-2 container font-semibold text-slate-800 rounded-md hover:bg-[#AEC90B] transition inline-block text-center"
+        class="bg-[#AEC90B] px-12 py-2.5 container font-semibold text-slate-800 rounded-md hover:bg-[#AEC90B] transition inline-block text-center"
         aria-label="Button to reserve a demo">Réserver une démo</a
       >
     </div>
   </div>
   <div
-    class="2xl:hidden lg:min-w-[715px] lg:h-[550px] w-full relative lg:absolute right-0 flex justify-end z-0"
+    class="lg:min-w-[715px] lg:h-[550px] w-full relative lg:absolute 2xl:right-0 2xl:relative flex justify-end z-0 lg:-right-[45px]"
   >
     <Image
       alt="Banner right image"
-      src={imgimages_1739172258787_Web_1920___1_1_webp}
+      src={gii_hero_large_webp}
       width="750"
       height="654"
       class="object-contain w-full lg:w-auto lg:absolute h-full"
-      aria-label="Right side image of the Hero Dark Banner"
-    />
-  </div>
-  <div
-    class="hidden 2xl:flex lg:min-w-[715px] lg:h-[550px] w-full relative right-0 justify-end z-0"
-  >
-    <Image
-      alt="Banner right image"
-      src={ gii_hero_large_webp}
-      width="750"
-      height="654"
-      class="object-contain"
       aria-label="Right side image of the Hero Dark Banner"
     />
   </div>
