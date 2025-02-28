@@ -7,34 +7,34 @@ import Testimonials1 from "./Testimonials1.astro";
 import WhyChooseUs from "./WhyChooseUs.astro";
 ---
 
-<section class="w-full main-component bg-white" aria-labelledby="main component">
-   <div class="relative">
-      <input type="checkbox" id="popup-toggle" class="hidden peer" />
-      <div
-        class="fixed bottom-6 left-6 bg-white shadow-xl rounded-xl p-4 w-80 transition-all duration-300 peer-checked:opacity-0 peer-checked:invisible peer-checked:translate-y-4 opacity-100 visible translate-y-0 z-50"
-      >
-        <p class="text-gray-600 mb-8">
-          Les cookies ne sont pas utilisés sur ce site, et aucune donnée personnelle n'est collectée :)
-        </p>
-        <div class="text-center">
-          <label
+<section class="w-full main-component bg-white">
+  <div class="relative">
+    <input type="checkbox" id="popup-toggle" class="hidden peer" />
+    <div
+      class="fixed bottom-6 left-6 bg-white shadow-xl rounded-xl p-4 w-80 transition-all duration-300 peer-checked:opacity-0 peer-checked:invisible peer-checked:translate-y-4 opacity-100 visible translate-y-0 z-50"
+    >
+      <p class="text-gray-600 mb-8">
+        Les cookies ne sont pas utilisés sur ce site, et aucune donnée
+        personnelle n'est collectée :)
+      </p>
+      <div class="text-center">
+        <label
           for="popup-toggle"
-          class="inline-block bg-[#AEC90B] font-medium py-2 px-4  text-xs rounded transition-colors cursor-pointer"
+          class="inline-block bg-[#AEC90B] font-medium py-2 px-4 text-xs rounded transition-colors cursor-pointer"
         >
-        Fermer
+          Fermer
         </label>
-        </div>
       </div>
     </div>
-   <section class="flex w-full flex-col justify-center mx-auto gap-32">
-    <WhyChooseUs/>
-    <StrategySection/>
-    <KeyPerformance/>
-   </section>
-   <section class="flex flex-col gap-10">
-    <StatsSection/>
-    <Testimonials1/>
-  <Testimonials/>
-   </section>
-    
+  </div>
+  <section class="flex w-full flex-col justify-center mx-auto gap-32">
+    <WhyChooseUs />
+    <StrategySection />
+    <KeyPerformance />
+  </section>
+  <section class="flex flex-col gap-10">
+    <StatsSection />
+    <Testimonials1 />
+    <Testimonials />
+  </section>
 </section>
