@@ -1,13 +1,13 @@
 ---
 import { Image } from "astro:assets";
 import imgimages_gii_banner_arrow_right_webp from "../../../public/images/gii_banner_arrow_right.webp";
-import imgimages_1739172258787_Web_1920___1_1_webp from "../../../public/images/gii_hero_pic.webp";
-import gii_hero_large_webp from "../../../public/images/gii_hero_large.webp";
+import imgimages_1739172258787_Web_1920___1_1_webp from "../../../public/images/gii_hero_pic_2.webp";
+import gii_hero_large_webp from "../../../public/images/gii_hero_large_2.webp";
 ---
 
 <section
-  class="container px-4 mx-auto w-full grid grid-cols-1 xl:grid-cols-2 font-semibold text-white py-16 gap-6"
-  aria-label="Hero Dark Section Wrapper lg:h-576[px]"
+  class="container px-4 mx-auto w-full grid grid-cols-1 xl:grid-cols-2 font-semibold text-white py-16 xl:py-36 gap-6 min-h-[calc(100vh_-_85px)]"
+  aria-label="Hero Dark Section Wrapper"
 >
   <div
     class="flex lg:min-h-[440px] w-full flex-col items-start gap-12 z-20"
@@ -30,8 +30,8 @@ import gii_hero_large_webp from "../../../public/images/gii_hero_large.webp";
       <Image
         alt="arrowRightIcon"
         src={imgimages_gii_banner_arrow_right_webp}
-        width="400"
-        height="300"
+        width="40"
+        height="54"
         class="my-auto aspect-[1.1] w-[40px] lg:w-[54px] shrink-0 self-stretch object-contain"
         aria-label="Right arrow icon for navigation"
       />
@@ -42,8 +42,8 @@ import gii_hero_large_webp from "../../../public/images/gii_hero_large.webp";
       <Image
         alt="arrowRightIcon"
         src={imgimages_gii_banner_arrow_right_webp}
-        width="400"
-        height="300"
+        width="40"
+        height="54"
         class="my-auto aspect-[1.08] w-[40px] lg:w-[54px] shrink-0 self-stretch object-contain"
         aria-label="Right arrow icon for navigation"
       /><span
@@ -54,7 +54,7 @@ import gii_hero_large_webp from "../../../public/images/gii_hero_large.webp";
     <div class="w-full lg:w-auto">
       <a
         href="/contact"
-        class="bg-[#AEC90B] px-12 py-2.5 container font-semibold text-slate-800 rounded-md hover:bg-[#AEC90B] transition inline-block text-center"
+        class="bg-[#AEC90B] px-12 py-2 container font-semibold text-slate-800 rounded-md hover:bg-[#AEC90B] transition inline-block text-center"
         aria-label="Button to reserve a demo">Réserver une démo</a
       >
     </div>
@@ -64,9 +64,9 @@ import gii_hero_large_webp from "../../../public/images/gii_hero_large.webp";
   >
     <Image
       alt="Banner right image"
-      src={gii_hero_large_webp}
-      width="667"
-      height="576"
+      src={imgimages_1739172258787_Web_1920___1_1_webp}
+      width="750"
+      height="654"
       class="object-contain w-full lg:w-auto lg:absolute h-full"
       aria-label="Right side image of the Hero Dark Banner"
     />
@@ -76,10 +76,10 @@ import gii_hero_large_webp from "../../../public/images/gii_hero_large.webp";
   >
     <Image
       alt="Banner right image"
-      src={imgimages_1739172258787_Web_1920___1_1_webp}
-      width="667"
-      height="576"
-      class="object-contain w-full lg:w-auto h-full"
+      src={ gii_hero_large_webp}
+      width="750"
+      height="654"
+      class="object-contain"
       aria-label="Right side image of the Hero Dark Banner"
     />
   </div>
