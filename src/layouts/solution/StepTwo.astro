@@ -1,57 +1,37 @@
 ---
 import { Image } from "astro:assets";
-import gii_bubble_go_dashboard from "../../../public/images/gii_bubble_go_dashboard (1).webp";
-import gii_bubble_go_dashboard_large from "../../../public/images/gii_bubble_go_dashboard (1).webp";
+import gii_evaluate_dashboard_large from "../../../public/images/gii_evaluate_dashboard_large.webp";
 ---
-<div class="2xl:container w-full mx-auto gap-24 flex flex-col lg:py-24 py-12 max-md:max-w-full self-stretch bg-[#283E52]" aria-label="Step Two Wrapper">
-  <div class="flex flex-col lg:flex-row items-center justify-center lg:justify-end 2xl:relative lg:gap-0 gap-10  flex-wrap px-4 lg:px-20">
-    <!-- Image  container  -->
-    <div class="2xl:hidden relative w-full lg:w-1/2 order-2 lg:order-1 flex lg:justify-start justify-center  lg:absolute left-0">
-      <Image
-        alt="GII solution illustration"
-        src={gii_bubble_go_dashboard}
-        width="644"
-        height="300"
-        class="w-full rounded-lg h-full  lg:w-[644px]"
-        loading="lazy"
-      />
-    </div>
-    <div class="hidden 2xl:flex relative w-full lg:w-1/2 order-2 lg:order-1  lg:justify-start justify-center  lg:absolute left-0">
-      <Image
-        alt="GII solution illustration"
-        src={gii_bubble_go_dashboard_large}
-        width="644"
-        height="300"
-        class="w-full rounded-lg h-full  lg:w-[644px]"
-        loading="lazy"
-      />
-    </div>
-    <div
-      class="lg:pl-40   order-1 lg:order-2 flex flex-col gap-12 lg:p-10  text-white rounded-xl lg:rounded-2xl w-full lg:w-[64%]"
-    >
-      <div class="flex items-center gap-4">
-        <h4 class="text-7xl font-[400] flex items-start font-poppins lg:mt-2">2.</h4>
-        <h4 class="text-[28px] lg:text-3xl font-semibold leading-10">
-          Mesurez son empreinte liée au numérique (bilan carbone et analyse du cycle de vie)
-        </h4>
-      </div>
-
-      <p class="text-lg lg:text-xl leading-8 ">
-        Mesurer, c’est utile, et d’ailleurs, beaucoup de nos concurrents peuvent le faire. Mais cela devient inutile quand le tableur Excel finit par être rangé dans un tiroir, ouvert une fois par an…
-      </p>
-
-      <p class="text-lg lg:text-xl leading-8 ">
-        L’important dans la mesure, c’est qu’elle corresponde à des standards reconnus et qu’elle soit multi-critères pour comprendre les tenants et les aboutissants, mais surtout qu’elle puisse être calculée en temps réel pour ne pas tomber dans l’oubli.
-      </p>
-
-      <p class="text-lg lg:text-xl leading-8 ">
-        C'est pourquoi nous avons créé la première matrice de calcul en ACV (Analyse de Cycle de Vie) dynamique, qui se connecte à vos usages pour analyser les données quand c'est nécessaire. Que ce soit pour un Bilan Carbone, une Analyse de Cycle de Vie Simple, ou une Analyse de Cycle de Vie Complète, notre solution s'adapte à vos besoins pour vous offrir des résultats précis et pertinents.
-      </p>
-
-      <p class="text-lg lg:text-xl font-semibold">
-        Ces outils vous aident à quantifier votre impact de manière précise et efficace.
-      </p>
-    </div>
+<section class="relative md:flex-row items-center text-white 2xl:mx-auto 2xl:container w-full mx-auto lg:gap-4 flex flex-col lg:py-24 py-12 bg-[#283E52]">
+  
+  <div class="order-2 md:order-1 lg:order-1 md:w-1/2 w-full flex justify-start mt-8 md:mt-0 px-4 lg:px-0 2xl:px-0 xl:-left-[85px] 2xl:left-0 relative">
+    <Image
+      alt="GII solution illustration"
+      src={gii_evaluate_dashboard_large}
+      class="self-stretch my-auto lg:w-full flex lg:block"
+      loading="lazy"
+      aria-label="GII solution illustration"
+    />
   </div>
-</div>
+  <div class="md:w-1/2 2xl:pl-16 lg:pl-0 px-4 flex flex-col gap-8 text-lg order-1 lg:order-2 lg:pr-20 2xl:pr-0">
+    <div class="flex items-center gap-6 lg:mt-2">
+      <h3 class="text-7xl font-medium">2.</h3>
+      <div>
+        <h4 class="font-semibold text-[28px] leading-[1.5]">Mesurez son empreinte liée au numérique (bilan carbone et analyse du cycle de vie)</h4>
+      </div>
+    </div>
+    <p class="text-lg">
+      Mesurer, c'est utile, et d'ailleurs, beaucoup de nos concurrents peuvent le faire ;). Mais cela devient inutile quand le tableur Excel finit par être rangé dans un tiroir, ouvert une fois par an…
+    </p>
+    <p class="text-lg">
+      L'important dans la mesure, c'est qu'elle corresponde à des standards reconnus et qu'elle soit multi-critères pour comprendre les tenants et les aboutissants, mais surtout qu'elle puisse être calculée en temps réel pour ne pas tomber dans l'oubli.
+    </p>
+    <p class="text-lg">
+      C'est pourquoi nous avons créé la première matrice de calcul en ACV (Analyse de Cycle de Vie) dynamique, qui se connecte à vos usages pour analyser les données quand c'est nécessaire. Que ce soit pour un Bilan Carbone, une Analyse de Cycle de Vie Simple, ou une Analyse de Cycle de Vie Complète, notre solution s'adapte à vos besoins pour vous offrir des résultats précis et pertinents.
+    </p>
+    <p class="font-semibold text-lg">
+      Ces outils vous aident à quantifier votre impact de manière précise et efficace.
+    </p>
+  </div>
 
+</section>
