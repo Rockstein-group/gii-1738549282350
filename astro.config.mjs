@@ -6,5 +6,11 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), compressor({ gzip: true, brotli: true })],
+  site: "https://greenitimpact.io",
+  integrations: [
+    tailwind(),
+    robotsTxt(),
+    sitemap(),
+    compressor({ gzip: true, brotli: true }),
+  ],
 });
