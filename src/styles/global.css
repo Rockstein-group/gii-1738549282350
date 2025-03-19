@@ -12,3 +12,32 @@ body > main {
 @theme {
   --font-sans: "Inter", "sans-serif";
 }
+
+/* Hide Google Translate attribution */
+.goog-te-banner-frame,
+.goog-te-gadget-icon,
+.goog-te-menu-value span,
+.goog-te-gadget span,
+.VIpgJd-ZVi9od-l4eHX-hSRGPd,
+.VIpgJd-ZVi9od-ORHb-OEVmcd {
+  display: none !important;
+}
+
+.goog-te-gadget {
+  color: transparent !important;
+  font-size: 0px !important;
+}
+
+.goog-te-gadget .goog-te-combo {
+  display: none !important;
+}
+
+/* Custom styles for the Google Translate widget */
+#google_translate_element {
+  display: none;
+}
+
+/* Hide Google Translate top bar */
+body {
+  top: 0 !important;
+}
