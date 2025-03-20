@@ -75,10 +75,9 @@ import imgimages_menu_bar_webp from "../../public/images/menu-bar.webp";
           </nav>
 
           <!-- Google Translate Element (hidden) -->
-          <!-- <div id="google_translate_element" class="hidden"></div> -->
+          <div id="google_translate_element" class="hidden"></div>
 
           <!-- Desktop "Réserver une démo" Button -->
-          
 
           <!-- Mobile Menu Button -->
           <div class="flex items-center gap-2 md:gap-6">
@@ -92,14 +91,12 @@ import imgimages_menu_bar_webp from "../../public/images/menu-bar.webp";
               </a>
             </button>
             <!-- Language Switcher Button -->
-            <!-- <div class="language-switcher">
+            <div class="language-switcher">
               <button
                 id="languageToggle"
                 class="flex items-center space-x-2 border border-solid border-white px-3 py-1.5 rounded-full transition-all duration-300"
               >
-                <div
-                  class="flex items-center font-medium text-white space-x-1"
-                >
+                <div class="flex items-center font-medium text-white space-x-1">
                   <div class="flex items-center">
                     <div id="flagEN" class="w-5 h-3 mr-1">
                       <svg
@@ -157,7 +154,7 @@ import imgimages_menu_bar_webp from "../../public/images/menu-bar.webp";
                   </div>
                 </div>
               </button>
-            </div> -->
+            </div>
             <div class="flex items-center lg:hidden">
               <button
                 id="menu-toggle"
@@ -225,7 +222,7 @@ import imgimages_menu_bar_webp from "../../public/images/menu-bar.webp";
 </header>
 
 <!-- Google Translate Script -->
-<!-- <script type="text/javascript">
+<script type="text/javascript">
   // Initialize the language state
   let currentLanguage = "fr"; // Default language is French
 
@@ -387,54 +384,8 @@ import imgimages_menu_bar_webp from "../../public/images/menu-bar.webp";
     if (mobileLanguageToggle) {
       mobileLanguageToggle.addEventListener("click", toggleLanguage);
     }
-
-    // Original script for menu toggle
-    const menuToggle = document.getElementById("menu-toggle");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const closeMenu = document.getElementById("close-menu");
-    const navLinks = document.querySelectorAll("nav a");
-
-    const currentPath = window.location.pathname;
-
-    navLinks.forEach((link) => {
-      const href = link.getAttribute("href");
-      if (
-        href &&
-        currentPath != "/" &&
-        href.includes(currentPath.replace(/^\/+|\/+$/g, ""))
-      ) {
-        link.classList.add("text-[#AEC90B]");
-      } else {
-        link.classList.remove("text-[#AEC90B]");
-      }
-    });
-
-    if (menuToggle) {
-      menuToggle.addEventListener("click", () => {
-        console.log("Menu toggle clicked");
-        mobileMenu.classList.toggle("translate-x-0");
-        // mobileMenu.classList.toggle("translate-x-full");
-      });
-    }
-
-    if (closeMenu) {
-      closeMenu.addEventListener("click", () => {
-        mobileMenu.classList.add("translate-x-full");
-      });
-    }
-
-    document.addEventListener("click", (event) => {
-      if (
-        mobileMenu &&
-        !mobileMenu.contains(event.target) &&
-        menuToggle &&
-        !menuToggle.contains(event.target)
-      ) {
-        mobileMenu.classList.add("translate-x-full");
-      }
-    });
   });
-</script> -->
+</script>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
