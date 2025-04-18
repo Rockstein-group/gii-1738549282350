@@ -60,18 +60,20 @@ import ConformiteLoiReen from "../layouts/solution/ConformiteLoiReen.astro";
       <div class="bg-[#283E52] relative">
         <StepTwo />
       </div>
-      <div class="relative">
-        <StepThree />
-      </div>
-
-      <div class="bg-[#283E52] relative">
-        <StepFour />
-      </div>
-      <StepFive />
-      <div
-        class="bg-[#283E52] py-12 lg:py-24">
-        <StepSix />
-      </div>
+      <lazy-load>
+        <div class="relative">
+          <StepThree />
+        </div>
+  
+        <div class="bg-[#283E52] relative">
+          <StepFour />
+        </div>
+        <StepFive />
+        <div
+          class="bg-[#283E52] py-12 lg:py-24">
+          <StepSix />
+        </div>
+      </lazy-load>
       <ConformiteLoiReen />
     </section>
   </MainLayout>

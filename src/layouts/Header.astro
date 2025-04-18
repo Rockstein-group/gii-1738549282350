@@ -219,7 +219,108 @@ import imgimages_menu_bar_webp from "../../public/images/menu-bar.webp";
     </div>
   </section>
 </header>
+<script>
+  class LazyLoad extends HTMLElement {
+    constructor() {
+      super();
+      class HeadlessDetect {
+        allTestFunctions = [
+          "testUserAgent",
+          "testChromeWindow",
+          "testPlugins",
+          "testAppVersion",
+          "testConnectionRtt",
+        ];
 
+        constructor() {}
+
+        testUserAgent() {
+          if (/Headless/.test(window.navigator.userAgent)) {
+            return 1;
+          } else {
+            return 0;
+          }
+        }
+
+        testChromeWindow() {
+          // @ts-ignore
+          if (eval.toString().length == 33 && !window.chrome) {
+            return 1;
+          } else {
+            return 0;
+          }
+        }
+
+        testNotificationPermissions(callback) {
+          navigator.permissions
+            .query({ name: "notifications" })
+            .then(function (permissionStatus) {
+              if (
+                Notification.permission === "denied" &&
+                permissionStatus.state === "prompt"
+              ) {
+                // Headless
+                callback(1);
+              } else {
+                // Not Headless
+                callback(0);
+              }
+            });
+        }
+
+        testPlugins() {
+          let length = navigator.plugins.length;
+
+          return length === 0 ? 1 : 0;
+        }
+
+        testAppVersion() {
+          let appVersion = navigator.appVersion;
+
+          return /headless/i.test(appVersion) ? 1 : 0;
+        }
+
+        // Connection Rtt
+        testConnectionRtt() {
+          // @ts-ignore
+          let connection = navigator.connection;
+          let connectionRtt = connection ? connection.rtt : undefined;
+
+          if (connectionRtt === undefined) {
+            return 0;
+          } else {
+            return connectionRtt === 0 ? 1 : 0;
+          }
+        }
+
+        getHeadlessScore() {
+          let score = 0;
+          let testsRun = 0;
+
+          this.testNotificationPermissions(function (v) {
+            score += v;
+            testsRun++;
+          });
+
+          for (let i = 0; i < this.allTestFunctions.length; i++) {
+            score += this[this.allTestFunctions[i]].apply();
+            testsRun++;
+          }
+
+          return score / testsRun;
+        }
+      }
+      const headlessDetector = new HeadlessDetect();
+      if (headlessDetector.getHeadlessScore() > 0.25) {
+        while (this.firstChild) {
+          this.removeChild(this.firstChild);
+        }
+      }
+    }
+  }
+
+  customElements.define("lazy-load", LazyLoad);
+</script>
 <!-- Google Translate Script -->
 <script type="text/javascript">
   // Initialize the language state
