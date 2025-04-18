@@ -2,6 +2,7 @@
 import imgimages_gii_quote_icon_webp from "../../../public/images/gii_quote_icon.webp";
 import img_simon_cardon_dirigeant from "../../../public/images/simon-cardon-dirigeant.webp";
 import { Image } from "astro:assets";
+import { simon_cardon_dirigeant_webp } from "../../generated/images";
 ---
 
 <section
@@ -61,9 +62,9 @@ aria-labelledby="testimonialsDarkSectionHeading"
           <figure>
             <Image
               alt="Simon Cardon, directeur général de Green Web"
-              src={img_simon_cardon_dirigeant}
-              width="414"
-              height="354"
+              src={simon_cardon_dirigeant_webp}
+              width={414}
+              height={354}
               class="flex w-full lg:w-[414px] lg:min-w-[354px] shrink grow flex-col rounded-3xl"
               id="testimonialImage"
             />
