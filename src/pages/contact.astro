@@ -21,7 +21,7 @@ import Breadcrumb from "../components/Breadcrumb.astro";
             submitButton.innerText = "Envoi en cours...";
             const formData = new FormData(e.target);
             const formObject = Object.fromEntries(formData);
-            formObject.emailUser = "contact@green-web.fr";
+            formObject.emailUser = "simon.c@green-web.fr";
     
             try {
               const response = await fetch("https://app.ecobuilder.io/api/send-mail-contact", {
