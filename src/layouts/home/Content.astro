@@ -27,14 +27,16 @@ import WhyChooseUs from "./WhyChooseUs.astro";
       </div>
     </div>
   </div>
-  <section class="flex w-full flex-col justify-center mx-auto gap-32">
-    <WhyChooseUs />
-    <StrategySection />
-    <KeyPerformance />
-  </section>
-  <section class="flex flex-col gap-10">
-    <StatsSection />
-    <Testimonials1 />
-    <Testimonials />
-  </section>
+  <lazy-load>
+    <section class="flex w-full flex-col justify-center mx-auto gap-32">
+      <WhyChooseUs />
+      <StrategySection />
+      <KeyPerformance />
+    </section>
+    <section class="flex flex-col gap-10">
+      <StatsSection />
+      <Testimonials1 />
+      <Testimonials />
+    </section>
+  </lazy-load>
 </section>
