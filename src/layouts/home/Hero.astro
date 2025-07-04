@@ -59,13 +59,11 @@ import gii_hero_large_webp from "../../../public/images/gii_hero_large_2.webp";
   <div
     class="lg:min-w-[715px] lg:h-[550px] w-full relative lg:absolute 2xl:right-0 2xl:relative flex justify-end z-0 lg:-right-[45px]"
   >
-    <lazy-load class="lg:w-auto lg:absolute">
-      <Image
-        alt="Hero section banner"
-        src={gii_hero_large_webp}
-        class="object-contain w-full h-full"
-        loading="eager"
-      />
-    </lazy-load>
+    <Image
+      alt="Hero section banner"
+      src={gii_hero_large_webp}
+      class="object-contain w-full lg:w-auto lg:absolute h-full"
+      loading="eager"
+    />
   </div>
 </section>
