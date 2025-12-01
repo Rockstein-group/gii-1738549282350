@@ -7,3 +7,12 @@ export const styles = {
   headingClass: "font-medium leading-tight",
   buttonClass: "rounded-md border transition-all px-12 py-2.5 font-semibold",
 };
+
+export const translations = {
+  hero: {
+    heading: {
+      fr: "Agissez pour un numérique plus éthique, souverain, et résilient",
+      en: "Act for an ethic, sovereign and resilient IT"
+    }
+  }
+};

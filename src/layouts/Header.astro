@@ -409,6 +409,9 @@ import imgimages_menu_bar_webp from "../../public/images/menu-bar.webp";
 
     document.getElementById("frLabel").classList.add("opacity-50");
     document.getElementById("flagFR").classList.add("opacity-50");
+
+    // Dispatch custom event for manual translations
+    window.dispatchEvent(new CustomEvent("languageChanged", { detail: { language: "en" } }));
   }
 
   function switchToFrench() {
@@ -434,6 +437,9 @@ import imgimages_menu_bar_webp from "../../public/images/menu-bar.webp";
 
     document.getElementById("enLabel").classList.add("opacity-50");
     document.getElementById("flagEN").classList.add("opacity-50");
+
+    // Dispatch custom event for manual translations before reload
+    window.dispatchEvent(new CustomEvent("languageChanged", { detail: { language: "fr" } }));
 
     // Reload the page to ensure we're back to French
     window.location.reload();

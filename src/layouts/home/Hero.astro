@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import imgimages_gii_banner_arrow_right_webp from "../../../public/images/gii_banner_arrow_right.webp";
 import gii_hero_large_webp from "../../../public/images/gii_hero_large_2.webp";
+import { translations } from "../../constant/index";
 ---
 
 <section
@@ -13,10 +14,11 @@ import gii_hero_large_webp from "../../../public/images/gii_hero_large_2.webp";
     aria-label="Left Content of Hero Dark Section"
   >
     <h1
-      class="text-[#243544] container text-4xl self-stretch lg:text-[54px] leading-snug font-bold flex flex-col items-start gap-4"
+      id="hero-heading"
+      class="text-[#243544] container text-4xl self-stretch lg:text-[54px] leading-snug font-bold flex flex-col items-start gap-4 notranslate"
       aria-label="Main title for Hero Dark Section"
     >
-      Agissez pour un Numérique plus éthique et soutenable
+      {translations.hero.heading.fr}
     </h1>
     <nav
       class="max-md:max-w-full flex flex-wrap items-center justify-between md:justify-start gap-1 md:gap-4 lg:gap-9 container md:text-2xl"
@@ -70,3 +72,39 @@ import gii_hero_large_webp from "../../../public/images/gii_hero_large_2.webp";
     />
   </div>
 </section>
+
+<script>
+  import { translations } from "../../constant/index";
+
+  // Function to update hero heading based on language
+  function updateHeroHeading(language: string) {
+    const heroHeading = document.getElementById("hero-heading");
+    if (heroHeading) {
+      heroHeading.textContent = translations.hero.heading[language as 'fr' | 'en'];
+    }
+  }
+
+  // Check current language from cookie
+  function getCookie(name: string) {
+    const nameEQ = name + "=";
+    const ca = document.cookie.split(";");
+    for (let i = 0; i < ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) === " ") c = c.substring(1, c.length);
+      if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+  }
+
+  // Listen for language changes
+  document.addEventListener("DOMContentLoaded", function () {
+    // Set initial heading based on saved language
+    const savedLanguage = getCookie("siteLanguage") || "fr";
+    updateHeroHeading(savedLanguage);
+
+    // Listen for custom language change event
+    window.addEventListener("languageChanged", function (event: any) {
+      updateHeroHeading(event.detail.language);
+    });
+  });
+</script>
